@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+<Context crossContext="true">
+	   <Resource name="jdbc/telemed" auth="Container"
+	   factory="org.apache.commons.dbcp.BasicDataSourceFactory"
+       type="javax.sql.DataSource" 
+       username="dctc" password="dctc"
+       driverClassName="org.postgresql.Driver"
+       url="jdbc:postgresql://10.10.10.27:5432/DCTCLocDev?currentSchema=dctc" 
+       validationQuery="select 1" removeAbandoned="true"
+       maxActive="8" accessToUnderlyingConnectionAllowed="true"
+	   />	 		 
+</Context>

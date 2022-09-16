@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Field Survey Form</title>
+	<!-- <link rel="stylesheet" type="text/css" href="../../scripts/assets/css/FieldSurvey.css">  -->
+	<link rel="stylesheet" type="text/css" href="scripts/assets/css/FieldSurvey.css">
+	<link rel="manifest" href="manifest.json">
+	<!--iOS support-->
+	<link rel="apple-touch-icon" href="icons/icon-96.png">
+	<meta name="apple-mobile-web-app-status-bar" content="#00695c">
+	<meta name="theme-color" content="#00695c">
+	<!--iOS support-->	
+</head>
+
+
+
+
+<body>
+	<div class="container">
+
+		<div class="title">
+			FIELD SURVEY FORM
+		</div>
+		
+		<!-- <p style="float: right;"><a href="/DigiPathoFS/views/digipathofs/MainPage.html">Back</a></p>  --> 
+		<p style="float: right;"><a href="MainPage.html">Home</a></p> 
+		<h5> Person Details </h5>
+		<div class="form">
+			<form name="patientForm">
+				<div class="input-field">
+					<label>NAME</label>
+					<input type="text" id="name" class="input">
+				</div>
+
+				<div class="input-field">
+					<label>DATE OF BIRTH</label>
+					<input type="date" id="dob" class="input">
+				</div>
+				
+				<div class="input-field">
+					<label>AGE</label>
+					<input type="text" class="input inp" id="yearinput" placeholder="Year">
+					<input type="text" class="input inp" id="monthinput" placeholder="Month">
+				</div>
+				
+				<div class="input-field">
+					<label>SEX</label>
+					<div class="custom_select">
+					<select id="sex">
+						<option>Select</option>
+						<option>Male</option>
+						<option>Female</option>
+						<option>Other</option>
+					</select>
+					</div>
+				</div>
+
+				<div class="input-field">
+					<label>MARITAL STATUS</label>
+					<div class="custom_select">
+					<select id="mstatus">
+						<option>Select</option>
+						<option>Married</option>
+						<option>Unmarried</option>
+					</select>
+					</div>
+				</div>				
+
+				<div class="input-field">
+					<label>MOBILE NO</label>
+					<input type="phone" id="mobile" class="input">
+				</div>						
+
+				<div class="input-field">
+					<label>HOUSE NAME</label>
+					<input type="text" id="house" class="input">
+				</div>
+
+				<div class="input-field">
+					<label>AADHAAR NO</label>
+					<input type="text" id="aadhaar" class="input">
+				</div>			
+
+				<div class="input-field">
+					<label>WARD</label>
+					<input type="number" id="ward" class="input">
+				</div>
+
+				<div class="input-field">
+					<label>PANCHAYATH</label>
+					<input type="text" id="panchayath" class="input">
+				</div>
+				
+				<div class="input-field">
+					<label>DISTRICT</label>
+					<div class="custom_select">
+					<select name="district" id="district" class="form-control">
+					<option value="Alappuzha">Alappuzha</option>
+					<option value="Ernakulam">Ernakulam</option>
+					<option value="Idukki">Idukki</option>
+					<option value="Kannur">Kannur</option>
+					<option value="Kasaragod">Kasaragod</option>
+					<option value="Kollam">Kollam</option>
+					<option value="Kottayam">Kottayam</option>
+					<option value="Kozhikode">Kozhikode</option>
+					<opti  on value="Malappuram">Malappuram</option>
+					<option value="Palakkad">Palakkad</option>
+					<option value="Pathanamthitta">Pathanamthitta</option>
+					<option value="Thiruvananthapuram">Thiruvananthapuram</option>
+					<option value="Thrissur">Thrissur</option>
+					<option value="Wayanad" selected>Wayanad</option>
+					</select>
+					</div>
+				</div>	
+
+				<div class="input-field">
+					<label>STATE</label>
+					<div class="custom_select">
+					<select name="state" id="state" class="form-control">
+					<option value="Andhra Pradesh">Andhra Pradesh</option>
+					<option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+					<option value="Arunachal Pradesh">Arunachal Pradesh</option>
+					<option value="Assam">Assam</option>
+					<option value="Bihar">Bihar</option>
+					<option value="Chandigarh">Chandigarh</option>
+					<option value="Chhattisgarh">Chhattisgarh</option>
+					<option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+					<option value="Daman and Diu">Daman and Diu</option>
+					<option value="Delhi">Delhi</option>
+					<option value="Lakshadweep">Lakshadweep</option>
+					<option value="Puducherry">Puducherry</option>
+					<option value="Goa">Goa</option>
+					<option value="Gujarat">Gujarat</option>
+					<option value="Haryana">Haryana</option>
+					<option value="Himachal Pradesh">Himachal Pradesh</option>
+					<option value="Jammu and Kashmir">Jammu and Kashmir</option>
+					<option value="Jharkhand">Jharkhand</option>
+					<option value="Karnataka">Karnataka</option>
+					<option value="Kerala" selected>Kerala</option>
+					<option value="Madhya Pradesh">Madhya Pradesh</option>
+					<option value="Maharashtra">Maharashtra</option>
+					<option value="Manipur">Manipur</option>
+					<option value="Meghalaya">Meghalaya</option>
+					<option value="Mizoram">Mizoram</option>
+					<option value="Nagaland">Nagaland</option>
+					<option value="Odisha">Odisha</option>
+					<option value="Punjab">Punjab</option>
+					<option value="Rajasthan">Rajasthan</option>
+					<option value="Sikkim">Sikkim</option>
+					<option value="Tamil Nadu">Tamil Nadu</option>
+					<option value="Telangana">Telangana</option>
+					<option value="Tripura">Tripura</option>
+					<option value="Uttar Pradesh">Uttar Pradesh</option>
+					<option value="Uttarakhand">Uttarakhand</option>
+					<option value="West Bengal">West Bengal</option>
+					</select>
+					</div>
+				</div>	
+			
+				<div class="input-field">
+					<label>COUNTRY</label>
+					<input type="text" id="country" class="input" placeholder="India">
+				</div>	
+
+				<div class="input-field">
+					<label>PINCODE</label>
+					<input type="number" id="pin" class="input">
+				</div>	
+
+				<div class="btn-field">
+					<input type="submit" style='margin-right:16px' class="btn" value="SAVE">
+					<input type="button" class="btn" value="CLEAR">
+				</div>		
+			</form>												
+		</div>
+	</div>
+	<!-- <script src="scripts/js/app.js"></script>  -->
+ 	<script type="text/javascript" src="scripts/js/promise.js"></script>
+	<script type="text/javascript" src="scripts/js/fetch.js"></script>
+	<script type="text/javascript" src="scripts/js/app.js"></script>	
+	<script type="module" src="scripts/js/fsapp.js"></script>
+</body>
+</html>

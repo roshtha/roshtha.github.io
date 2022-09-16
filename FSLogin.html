@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+		<title>DigiPatho - Field Survey App Login</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	    <meta name="description" content="Phoenixcoded">
+	    <meta name="keywords" content=", Flat ui, Admin , Responsive, Landing, Bootstrap, App, Template, Mobile, iOS, Android, apple, creative app">
+	    <meta name="author" content="Phoenixcoded">  -->
+	    <!-- Google font-->
+	   	<!-- <link rel="stylesheet" type="text/css" href="scripts/css/google_font.css">  -->
+	    <!-- Required Fremwork -->
+	    <!-- <link rel="stylesheet" type="text/css" href="scripts/bower_components/bootstrap/css/bootstrap.min.css"> -->
+	    <!-- Menu-Search css -->
+	    <!-- <link rel="stylesheet" type="text/css" href="scripts/assets/pages/menu-search/css/component.css"> -->
+	    <!-- Style.css -->
+	    <!-- <link rel="stylesheet" type="text/css" href="scripts/assets/css/style.css"> -->
+		<link rel="stylesheet" type="text/css" href="scripts/assets/css/Login.css">
+	    <!-- <link rel="icons" type="image/png" sizes="144x144"  href="/favicon/android-icon-144x144.png"> -->
+	   	<!-- <script src="scripts/dctc/lo/TelemedLogin.js"></script> -->
+	   	<!-- <script src="scripts/js/app.js"></script>-->
+	   	<!-- code added by Subhadip -->
+	   	<link rel="manifest" href="manifest.json">
+		  <!--iOS support-->
+		  <link rel="apple-touch-icon" href="icons/icon-96.png">
+		  <meta name="apple-mobile-web-app-status-bar" content="#00695c">
+		  <meta name="theme-color" content="#00695c">
+		  <script src="scripts/axios/dist/axios.min.js"></script>
+		  <script src="scripts/dexie/dexie.min.js"></script>
+		  <!--iOS support-->
+		  <!-- code added by Subhadip -->
+			
+</head>
+
+<body>
+	<div class="center">
+		<h1>DigiPathoFS Login</h1>
+
+		<div class="form">
+			<input id="loginUser" type="email" name="" class="textfield" placeholder="Username">
+
+			<input id="loginPassword" type="password" name="" autocomplete="off" class="textfield" placeholder="Password">
+
+			<div class="forgetpass"><a href="#" class="link" onclick="message()">Forget Password?</a>
+			</div>
+
+			<!--  <input type="submit" name="" class="btn" value="Login" onclick="login();"> -->
+			
+			<!-- <button type="button" class="btn" id ="loginBtnID" onclick="login();">Login</button>  --> 
+			<!--<button type="button" class="btn" id ="loginBtnID" onclick="MainPageFn();">Login</button>-->
+			
+			<button type="button" class="btn" id ="loginBtnID" >Login</button>
+		</div>
+	</div>
+
+
+		<!-- <script type="text/javascript" src="scripts/bower_components/jquery/js/jquery.min.js"></script> -->  <!-- jquery undefined results $ is not defined hence,login button will not work  -->
+	    <!-- <script type="text/javascript" src="scripts/bower_components/jquery-ui/js/jquery-ui.min.js"></script>  --> 
+	    <!-- <script type="text/javascript" src="scripts/bower_components/popper.js/js/popper.min.js"></script>  -->
+	    <!-- <script type="text/javascript" src="scripts/bower_components/bootstrap/js/bootstrap.min.js"></script>  -->
+		 
+	    <!-- jquery slimscroll js -->
+	    <!-- <script type="text/javascript" src="scripts/bower_components/jquery-slimscroll/js/jquery.slimscroll.js"></script> -->
+	    <!-- modernizr js -->
+	    <!-- <script type="text/javascript" src="scripts/bower_components/modernizr/js/modernizr.js"></script>
+	    <script type="text/javascript" src="scripts/bower_components/modernizr/js/css-scrollbars.js"></script>
+	    -->
+	    <!-- i18next.min.js -->
+	    <!-- 
+	    <script type="text/javascript" src="scripts/bower_components/i18next/js/i18next.min.js"></script>
+	    <script type="text/javascript" src="scripts/bower_components/i18next-xhr-backend/js/i18nextXHRBackend.min.js"></script>
+	    <script type="text/javascript" src="scripts/bower_components/i18next-browser-languagedetector/js/i18nextBrowserLanguageDetector.min.js"></script>
+	    <script type="text/javascript" src="scripts/bower_components/jquery-i18next/js/jquery-i18next.min.js"></script>
+	     -->
+	    <!---- color js --->
+	    <!-- <script type="text/javascript" src="scripts/assets/js/common-pages.js"></script>  -->
+	    <!-- login slider- -->
+		<!--  <script src="scripts/js/loginSlider.js"></script>  --> 
+	    <!-- classie js -->
+	    <!-- <script type="text/javascript" src="scripts/bower_components/classie/js/classie.js"></script> -->
+		<!-- <script type="text/javascript">
+			function Captcha()
+			{
+		
+				var alpha = new Array('1','2','3','4','5','6','7','8','9','0','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z');
+			    var i;
+			    for (i=0;i<6;i++)
+			    {
+					var a = alpha[Math.floor(Math.random() * alpha.length)];
+					var b = alpha[Math.floor(Math.random() * alpha.length)];
+					var c = alpha[Math.floor(Math.random() * alpha.length)];
+					var d = alpha[Math.floor(Math.random() * alpha.length)];
+					var e = alpha[Math.floor(Math.random() * alpha.length)];
+					var f = alpha[Math.floor(Math.random() * alpha.length)];
+					var g = alpha[Math.floor(Math.random() * alpha.length)];
+				}
+				var code = a + ' ' + b + ' ' + ' ' + c + ' ' + d + ' ' + e + ' '+ f + ' ' + g;
+				console.log('code ===== '+code);
+				document.getElementById("captcha").value = code
+				document.getElementById('captchaText').value='';
+				$('#captcha').text(code);
+		 	}
+		 
+			function removeSpaces(string)
+			{
+				return string.split(' ').join('');
+			}
+		</script>  -->
+		 
+		<!-- <script type="text/javascript">
+		//var mainHtml= 'views/digipathofs/MainPage.html';
+		var mainHtml= 'MainPage.html';
+		var forgotpasswordurl = 'views/digipathofs/mas/ForgotPwd.html';
+		
+	    var createCookie = function(a)
+		{
+			return a ? (a ^ Math.random() * 16 >> a / 4).toString(16) : ([1e16] + 1e16).replace(/[01]/g, createCookie);
+			
+		};
+    	var login = function()
+		{
+			var userLogiIDPresent=false;
+        	var userPwdPresent=false
+        	if ($('#loginUser').val()!='')
+        		userLogiIDPresent=true;
+        	else 
+        		alert ('Please enter Login ID !');
+        	
+        	if ( $('#loginPassword').val()!='')
+        		userPwdPresent=true;
+        	else if (userLogiIDPresent)
+        		alert ('Please enter Password !');
+        	
+       		if (userLogiIDPresent && userPwdPresent)
+       		{
+			    var params = {};
+			    params['loginUser'] = $('#loginUser').val();
+			    params['loginPassword'] = $('#loginPassword').val();
+		
+			    var paramsLog = {};
+			    paramsLog['loginUser'] = $('#loginUser').val();
+			    paramsLog['loginPassword'] ="";
+				var pdata = {};
+				pdata['data']= JSON.stringify(params);
+				pdata['action']='LOGIN';   
+			    pdata['olddata']= {};
+			    pdata['module']='loginservice/loginaction'; 
+			    pdata['dataLog']=JSON.stringify(paramsLog);
+				console.log("params : "+JSON.stringify(params));
+		   		//Create cookie
+			   	const cookie = createCookie();
+			   	document.cookie = 'CSRF_TOKEN' + '=' + cookie;
+			   	$.ajax({
+					url: 'Rest/loginservice/loginaction?'+$.param(pdata),
+					dataType: 'json',
+					contentType: "application/json",
+					crossDomain: true,
+					xhrFields: {
+			       		withCredentials: true
+			     	},
+					headers: {'X-CSRF-TOKEN': cookie},
+					type: "POST",
+					data:pdata,
+					success: function(data)
+					{
+ 	 					if (data['status'] == 'Success') 
+ 	 					{
+ 	 						//alert('openMainPage');
+       						openMainPage();	                
+          				}
+ 	 					else if (data['status'] == 'dbfail') 
+ 	 					{
+ 	 						//alert('openMainPage');
+ 	 						alert('DB connection not available!!! OMG');           
+          				}
+          				else 
+          				{
+          					alert('Login Failed. Invalid Login Credentials !!!');
+         				}
+					},
+					error: function(xhr,status,error)
+  					{
+	 					alert('err '+error.message);
+  					}
+				});
+			}
+		}
+
+		function saveErr(xhr, status, error)
+		{
+			alert('Error! ' + error);
+		}
+		
+		function openMainPage(details)
+		{
+			//calls web service for fetching states url. for testing offline fetch api behaviour with pwa
+			/*var masterArr = ["mas_states"];
+			var arr = [];
+			for (var i=0;i<masterArr.length;i++){
+			var obj = new Object();
+			obj.tableName = masterArr[i];
+			arr.push(obj);
+			}		
+			var string = JSON.stringify(arr);
+			var params = {};
+			params['inputTblString'] = arr;				
+			//getTableMasters	
+			var pdata = {};
+			pdata['data']= JSON.stringify(params);
+			//utils.postDataCORS('http://10.176.15.19:8080/DCTCGloDev/Rest/insmanagementservice/getAllRegScreeningHubs',pdata,null,successLoadElements,errLoadElements);
+			//alert(usession.user_hospital_id)
+			utils.postDataCORS('http://10.176.15.19:8080/DCTCGloDev/Rest/masterservice/getTableMasters',pdata,null,successStatesData,errData);*/
+			
+			
+			
+	    	main=window.location.href =mainHtml;
+		} 
+		
+		function successStatesData(result){
+			alert('state service returned.')
+			
+			var statejson = result["mas_states"];
+			console.log("statejson = "+JSON.stringify(statejson));
+			//utils.loadComboWithJSONArray('StateID',statejson,'code','description');
+		
+		
+		}
+		
+		function openforgotpassword()
+	    {
+	    	$("#pageContent").load(forgotpasswordurl); 	
+	    }
+		
+		$(document).ready(function() 
+		{
+			/*//check if the sw is supported by the browser
+			if ('serviceWorker' in navigator) {                   //app.js file 
+			    //navigator.serviceWorker.register('/sw.js')
+			     navigator.serviceWorker.register('sw.js')  //promise 
+			    //navigator.serviceWorker.register(href = '/sw.js', { scope: '/' })
+			    .then((reg) => console.log('service worker REGISTERED', reg))       //if the promise returns something then print this message
+			    .catch((err) => console.log('service worker NOT REGISTERED', err))	//othewise catch the error and print this message
+			}*/
+	 		$("#loginPassword").keypress(function(e) {
+			//alert ('Inside');
+			//e.preventDefault();
+			    if(e.which == 13) 
+			    {
+			    	jQuery(this).blur();
+			        jQuery('#loginBtnID').focus().click();
+			    }
+			}); 
+	 		
+		 	/***************************Initial Configuration*************/
+		 	var params = {};
+		    params['loginUser'] = $('#loginUser').val();
+		    params['loginPassword'] = $('#loginPassword').val();
+		
+		    var paramsLog = {};
+		    paramsLog['loginUser'] = $('#loginUser').val();
+		    paramsLog['loginPassword'] ="";
+		 
+		 	var pdata={};
+			pdata['data']= JSON.stringify(params);
+		    pdata['dataLog']=JSON.stringify(paramsLog);
+			console.log("params : "+JSON.stringify(params));
+		  	//Create cookie
+			const cookies = createCookie();
+			document.cookies = 'CSRF_TOKEN' + '=' + cookies;
+			var initail_details={}
+	   
+	 	   	$.ajax({
+				     
+	 		     url: 'Rest/loginservice/getinitialconfig?'+$.param(pdata),
+	 		     dataType: 'json',
+			     contentType: "application/json",
+			     crossDomain: true,
+			     xhrFields: {
+			       withCredentials: true
+			     },
+			     headers: {'X-CSRF-TOKEN': cookies},
+			     type: "POST",
+			     data:pdata,
+				     success: function(data){
+				    	 if (data['status'] == 'Success') 
+			    		 {
+					    	initail_details=data['initial_configuration'];
+							var application_type=initail_details[0]['application_type'];
+							console.log("application_type="+application_type);
+							var str='';
+							if(application_type=="DctcScreeningHub") //application type can be cerviscan, oral cancer, diabetic retinopathy
+							{
+								document.title = 'Digitally Connected Tribal Colonies';  
+								$("head").append($("<link rel='stylesheet' type='text/css' href='scripts/css/styleLoginSct.css'/>")); 
+								//$("head").append($("<link rel='icon' href='scripts/assets/images/logo_sethu_icon.ico' type='image/x-icon'>"));
+								$('#imageDisplay').attr('style','display:visible;');
+								str='<h3 class="text-center"><img src="scripts/assets/images/digi_patho.png" ></h3>';
+								$("#logoDiv").append(str);
+								$('#downloadDiv').attr('style','display:none;');//for hiding the download option(POOJA)
+							}
+// 						else if(application_type=="SocialWorkerDisabled")
+// 						{
+// 							document.title = 'Telemedicine Solution for Oncology';  
+// 							$("head").append($("<link rel='stylesheet' type='text/css' href='scripts/css/styleLoginRcc.css'/>"));
+// 							$("head").append($("<link rel='icon' href='scripts/assets/images/logo_rcc_icon.ico' type='image/x-icon'>")); 
+// 						   	$('#imageDisplay').attr('style','display:visible;');
+// 						   	str='<h3 class="text-center"><img src="scripts/assets/images/rcc_logo.jpg" ></h3>';
+// 							$("#logoDiv").append(str);
+// 							$('#downloadDiv').attr('style','display:none;');//for hiding the download option(POOJA)
+// 						}
+// 						else //By Mani
+// 						{
+// 	   						document.title = 'Telemedicine Solution By CDAC Thiruvananthapuram';  
+// 	   						$("head").append($("<link rel='stylesheet' type='text/css' href='scripts/css/styleLoginRcc.css'/>"));
+// 							$("head").append($("<link rel='icon' href='scripts/assets/images/logo_rcc_icon.ico' type='image/x-icon'>")); 
+// 	   						$('#imageDisplay').attr('style','display:visible;');
+// 	   						str='<h3 class="text-center"><img src="scripts/assets/images/rcc_logo.jpg" ></h3>';
+// 							$("#logoDiv").append(str);
+// 							$('#downloadDiv').attr('style','display:visible;');//for  the download option(POOJA)
+// 						}
+				    	 	}
+					    else
+					    {
+					    	alert("DataBase connection is not available. Please check!!");
+					    }
+					},
+					error: function()
+					{
+						alert('Error occured while loading initial configuration');
+					},
+					complete: function(resp){
+				        console.log(resp.getAllResponseHeaders());
+				    }
+				}); 
+			});
+		
+			/***********************************Initial Configuration end******************************/
+
+    </script>  -->
+	<script type="text/javascript">
+		function message()
+		{
+			alert("Try to remember password :)");
+		}
+		
+		
+		  
+		
+		//fs_person_registration to include fields like sync_status (true/false), global_fs_person_id (primary key from global server, after data sync)
+		window.onload = function () {
+		
+			// Declare db instance
+			var db = new Dexie("DigiPathoFSDB");
+			
+			
+	
+			
+			// Define Database Schema
+			db.version(1).stores({
+			  fs_users: "global_user_id, user_id, login_id, login_password", 
+			  //other fields for data insert - title, first_name, middle_name, last_name, sex, email, mobile_no, //similar to structure of mas_users
+			  fs_person_registration: "++fs_person_id, global_fs_person_id, fs_inst_id, person_name ",
+			  //fs_cancer_screening: "++id, title, date, *items",
+			  //fs_common_cancer_screening:,
+			  //fs_oral_cancer_screening:,
+			  //fs_breast_cancer_screening:,
+			  //fs_cervical_cancer_screening:,
+			  
+			  friends: "++id, name, age, isCloseFriend",
+			  notes: "++id, title, date, *items"
+			  
+			  
+			});
+		
+			db.open().catch (function (err) {
+	    		console.error('Failed to open db: ' + (err.stack || err));
+			});
+			
+			
+			//Log DB details -- opens an existing database as is
+			
+			new Dexie("DigiPathoFSDB")
+			  .open()
+			  .then(function (db) {
+			    console.log("Found database: " + db.name);
+			    console.log("Database version: " + db.verno);
+			    db.tables.forEach(function (table) {
+			      console.log("Found table: " + table.name);
+			      console.log("Table Schema: " + JSON.stringify(table.schema, null, 4));
+			    });
+			  })
+			  .catch("NoSuchDatabaseError", function (e) {
+			    // Database with that name did not exist
+			    console.error("Database not found");
+			  })
+			  .catch(function (e) {
+			    console.error("Oh uh: " + e);
+			  });
+		  
+		
+			loginBtnID.addEventListener("click", function(){
+				alert('login button clicked');
+				
+				var Global_id = 'http://117.221.20.184:8080/DigiPathoGlo';
+	
+				var params = {};
+				
+				params["hospital_id"] = 'HS55';
+				params["role_id"] = 'RL221';
+				params["application_id"] = 'CF221';
+				
+	
+	
+				var pdata = {};
+				pdata['data']= JSON.stringify(params);
+				console.log('remote url:' + Global_id+'/Rest/usermanagementservice/readuserlist_global');
+				axios
+			       // .post(Global_id+'/Rest/usermanagementservice/readuserlist_global',pdata, )
+			        
+			        //.get('https://jsonplaceholder.typicode.com/todos?_limit=5')
+			        /*
+			        Ref: https://jasonwatmore.com/post/2021/06/25/axios-http-post-request-examples
+			        const article = { title: 'Axios POST Request Example' };
+					const headers = { 
+					    'Authorization': 'Bearer my-token',
+					    'My-Custom-Header': 'foobar'
+					};
+					axios.post('https://reqres.in/api/articles', article, { headers })
+
+
+        			*/
+			        .then((response) => {
+			        	console.log(JSON.stringify(response));
+			            const dbOpenRequest = indexedDB.open('DigiPathoFSDB', 2);
+			            
+			            dbOpenRequest.onupgradeneeded = function (event) {
+			                const db = event.target.result;
+			                db.createObjectStore('userStore', { keyPath: 'id' });
+			            };
+			            
+			            dbOpenRequest.onsuccess = function (event) {
+			                const db = event.target.result;
+			                const txn = db.transaction('userStore', 'readwrite');
+			                const store = txn.objectStore('userStore');
+			                const clearRequest = store.clear();
+			                clearRequest.onsuccess = function () {
+			                    response.data.forEach((usr) => {
+			                        store.add(usr);
+			                    });
+			                };
+			            };
+			            //setHospitals(response.data);
+			        })
+				
+    	
+    	
+    	
+    	
+  
+  
+  		//Hard code some user details. the data store sturcture similar to mas_users tabel
+		
+		//other fields for data insert - title, first_name, middle_name, last_name, sex, email, mobile_no, //similar to structure of mas_users
+		db.transaction("rw", db.fs_users,  function* () {
+		  // Let's add some data to db:
+		  var userdata = yield db.fs_users.add({
+		    global_user_id: "GUSR222",
+		    user_id: "USR2126",
+		    login_id: "admin",
+		    login_password: "admin",
+		    title:"Mr.",
+		    first_name: "Admin"
+		    ///
+		  });
+		 }).catch(function (err) {
+		  // Catch any error event or exception and log it:
+		  console.error(err.stack || err);
+		}); 
+		
+		
+		//authenticate user against hardcoded values and user entered parameters.
+		  
+		
+		// Interact With Database
+		db.transaction("rw", db.friends, db.notes, function* () {
+		  // Let's add some data to db:
+		  var friend1Id = yield db.friends.add({
+		    name: "Camilla",
+		    age: 25,
+		    isCloseFriend: 1,
+		  });
+		  var friend2Id = yield db.friends.add({
+		    name: "Ban Ki-moon",
+		    age: 70,
+		    isCloseFriend: 0,
+		  });
+		
+		  var noteId = yield db.notes.add({
+		    title: "Shop tomorrow",
+		    date: new Date(),
+		    items: ["milk", "butter"],
+		  });
+		
+		  // Let's query the db
+		  var closeFriends = yield db.friends
+		    .where("isCloseFriend")
+		    .equals(1)
+		    .toArray();
+		
+		  console.log("Close friends:" + closeFriends.map((f) => f.name));
+		
+		  var toShop = yield db.notes
+		    .where("title")
+		    .startsWithIgnoreCase("shop")
+		    .toArray();
+		
+		  console.log("Shopping list: " + toShop.map((note) => note.items));
+		}).catch(function (err) {
+		  // Catch any error event or exception and log it:
+		  console.error(err.stack || err);
+		});
+  
+  
+    	
+				
+				
+	  			document.location.href="MainPage.html"; 
+			});
+		
+		}
+		
+	</script>
+	
+	
+
+	
+	
+	<script type="text/javascript" src="scripts/js/promise.js"></script>
+	<script type="text/javascript" src="scripts/js/fetch.js"></script>
+	<script type="text/javascript" src="scripts/js/app.js"></script>
+	<!-- <script type="text/javascript" src="scripts/js/fsapp_remote.js"></script>-->
+	
+</body>
+
+
+	
+	
+</html>
+ 

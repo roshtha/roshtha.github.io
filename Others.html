@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Common Cancer Screening Survey Form</title>
+	<link rel="stylesheet" type="text/css" href="scripts/assets/css/Others.css">
+	<link rel="manifest" href="manifest.json">
+	<!--iOS support-->
+	<link rel="apple-touch-icon" href="icons/icon-96.png">
+	<meta name="apple-mobile-web-app-status-bar" content="#00695c">
+	<meta name="theme-color" content="#00695c">
+	<!--iOS support-->		
+</head>
+
+
+
+
+<body>
+	<div class="container">
+
+		<div class="title">
+			Common Cancer Screening 
+			<p style="float: right;"><a href="Menu.html">Menu</a></p> 
+		</div>
+		
+			<div class="form">
+			<form name="patientForm">
+			<div class="input-field">
+				<label>1.Vomiting blood?</label>
+				<table>
+					<tr>               
+		                <td>
+		                    <input type="radio" name="other1" id="other1">Yes
+		                    <input type="radio" name="other1" id="other1">No
+		                </td>															
+            		</tr>
+				</table>
+			</div>						
+
+			<div class="input-field">
+				<label>2.Is there blood in the stool?</label>
+				<table>
+					<tr>               
+		                <td>
+		                    <input type="radio" name="other2" id="other2">Yes
+		                    <input type="radio" name="other2" id="other2">No
+		                </td>															
+            		</tr>
+				</table>
+			</div>	
+
+			<div class="input-field">
+				<label>3.Black stools, persistent constipation and diarrhoea - Does it happen</label>
+				<table>
+					<tr>               
+		                <td>
+		                    <input type="radio" name="other3" id="other3">Yes
+		                    <input type="radio" name="other3" id="other3">No
+		                </td>															
+            		</tr>
+				</table>
+			</div>
+
+			<div class="input-field">
+				<label>4.Rapid weight loss?</label>
+				<table>
+					<tr>               
+		                <td>
+		                    <input type="radio" name="other4" id="other4">Yes
+		                    <input type="radio" name="other4" id="other4">No
+		                </td>															
+            		</tr>
+				</table>
+			</div>		
+
+			<div class="input-field">
+				<label>5.Does heartbum, indigestion, loss of appetite and abnormally bloated bowels occur?</label>
+				<table>
+					<tr>               
+		                <td>
+		                    <input type="radio" name="other5" id="other5">Yes
+		                    <input type="radio" name="other5" id="other5">No
+		                </td>															
+            		</tr>
+				</table>
+			</div>
+
+			<div class="input-field">
+				<label>6.Do body lumps, frickles and warts vary in color and size?</label>
+				<table>
+					<tr>               
+		                <td>
+		                    <input type="radio" name="other6" id="other6">Yes
+		                    <input type="radio" name="other6" id="other6">No
+		                </td>															
+            		</tr>
+				</table>
+			</div>		
+
+			<div class="input-field">
+				<label>7.Is there continuous noise?</label>
+				<table>
+					<tr>               
+		                <td>
+		                    <input type="radio" name="other7" id="other7">Yes
+		                    <input type="radio" name="other7" id="other7">No
+		                </td>															
+            		</tr>
+				</table>
+			</div>	
+
+			<div class="input-field">
+				<label>8.Continuous curl?</label>
+				<table>
+					<tr>               
+		                <td>
+		                    <input type="radio" name="other8" id="other8">Yes
+		                    <input type="radio" name="other8" id="other8">No
+		                </td>															
+            		</tr>
+				</table>
+			</div>
+
+			<div class="input-field">
+				<label>9.Bleeding from body orifices in common?</label>
+				<table>
+					<tr>               
+		                <td>
+		                    <input type="radio" name="other9" id="other9">Yes
+		                    <input type="radio" name="other9" id="other9">No
+		                </td>															
+            		</tr>
+				</table>
+			</div>											
+
+			<div class="btn-field">
+				<input type="button" class="btn" id="prevbutton" onclick="BreastFn()" value="<<">
+				<input type="submit" style='margin-right:16px' class="btn" value="SUBMIT">
+				<input type="button" class="btn" value="CLEAR">
+				<input type="button" class="btn" id="nextbutton" onclick="OverviewFn()" value=">>">
+			</div>
+			</form>				
+		</div>
+	</div>
+	<script>
+		function BreastFn() {
+			document.location.href="Breast.html"; 
+		}
+		
+		function OverviewFn() {
+			document.location.href="Overview.html"; /*Page name or Path*/ 
+		}
+	</script>	
+		<!-- <script src="scripts/js/app.js"></script>  -->
+ 	<script type="text/javascript" src="scripts/js/promise.js"></script>
+	<script type="text/javascript" src="scripts/js/fetch.js"></script>
+	<script type="text/javascript" src="scripts/js/app.js"></script>
+	<script type="module" src="scripts/js/othersapp.js"></script>
+</body>
+</html>

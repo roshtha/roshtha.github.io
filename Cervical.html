@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Cervical Cancer Screening Survey Form</title>
+	<link rel="stylesheet" type="text/css" href="scripts/assets/css/Cervical.css">
+	<link rel="manifest" href="manifest.json">
+	<!--iOS support-->
+	<link rel="apple-touch-icon" href="icons/icon-96.png">
+	<meta name="apple-mobile-web-app-status-bar" content="#00695c">
+	<meta name="theme-color" content="#00695c">
+	<!--iOS support-->		
+</head>
+
+
+
+
+<body>
+	<div class="container">
+
+		<div class="title">
+			Cervical Cancer Screening 
+			<p style="float: right;"><a href="Menu.html">Menu</a></p> 
+		</div>
+	
+			<div class="form">
+			<form name="patientForm">		
+			<div class="input-field">
+				<label>1.Is there unususal or recurrent bleeding?</label>
+				<table>
+					<tr>               
+		                <td>
+		                    <input type="radio" name="bleeding1" id="bleeding1" >Yes
+		                    <input type="radio" name="bleeding1" id="bleeding1" >No
+		                </td>															
+            		</tr>
+				</table>
+			</div>						
+
+			<div class="input-field">
+				<label>2.Does vaginal discharge smell foul or brown?</label>
+				<table>
+					<tr>               
+		                <td>
+		                    <input type="radio" name="discharge1" id="discharge1" >Yes
+		                    <input type="radio" name="discharge1" id="discharge1" >No
+		                </td>															
+            		</tr>
+				</table>
+			</div>	
+
+			<div class="input-field">
+				<label>3.Do you have vaginal discharge during and after intercourse?</label>
+				<table>
+					<tr>               
+		                <td>
+		                    <input type="radio" name="discharge2" id="discharge2" >Yes
+		                    <input type="radio" name="discharge2" id="discharge2" >No
+		                </td>															
+            		</tr>
+				</table>
+			</div>
+
+			<div class="input-field">
+				<label>4.Stopping menstrutaion. Are there corpses?</label>
+				<table>
+					<tr>               
+		                <td>
+		                    <input type="radio" name="mens1" id="mens1" >Yes
+		                    <input type="radio" name="mens1" id="mens1" >No
+		                </td>															
+            		</tr>
+				</table>
+			</div>		
+
+			<div class="input-field">
+				<label>5.Bleeding after menstruation?</label>
+				<table>
+					<tr>               
+		                <td>
+		                    <input type="radio" name="bleeding2" id="bleeding2" >Yes
+		                    <input type="radio" name="bleeding2" id="bleeding2" >No
+		                </td>															
+            		</tr>
+				</table>
+			</div>
+
+			<div class="input-field">
+				<label>6.Do you lose wight for no reason?</label>
+				<table>
+					<tr>               
+		                <td>
+		                    <input type="radio" name="weight" id="weight" >Yes
+		                    <input type="radio" name="weight" id="weight" >No
+		                </td>															
+            		</tr>
+				</table>
+			</div>				
+
+			<div class="btn-field">
+				<input type="button" class="btn" id="prevbutton" onclick="OralFn()" value="<<">
+				<input type="submit" style='margin-right:16px' class="btn" value="SUBMIT">
+				<input type="button" class="btn" value="CLEAR">
+				<input type="button" class="btn" id="nextbutton" onclick="BreastFn()" value=">>">
+			</div>	
+			</form>			
+		</div>
+		
+	</div>
+	<script>
+		function OralFn() {
+			document.location.href="Oral.html"; 
+		}
+		
+		function BreastFn() {
+			document.location.href="Breast.html"; /*Page name or Path*/ 
+		}
+	</script>	
+		<!-- <script src="scripts/js/app.js"></script>  -->
+ 	<script type="text/javascript" src="scripts/js/promise.js"></script>
+	<script type="text/javascript" src="scripts/js/fetch.js"></script>
+	<script type="text/javascript" src="scripts/js/app.js"></script>
+	<script src="scripts/js/cerviapp.js"></script>
+</body>
+</html>

@@ -1,0 +1,182 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Montserrat', sans-serif;
+}
+
+body {
+	background-color: #dcffff;
+	padding: 0 10px;
+	/*height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #1877F2 /*linear-gradient(135deg, #71b7e6, #9b59b6) */;
+}
+
+.container {
+	max-width: 500px;
+	width: 100%;
+	background-color: white;
+	margin: 20px auto;
+	padding: 30px;
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.container .title {
+	/*font-size: 24px;
+	font-weight: 700;
+	margin-bottom: 25px;
+	color: #0437F2;
+	text-transform: uppercase;
+	text-align: center;*/
+	font-size: 16px;
+	font-weight: 700;
+	margin-bottom: 25px;
+	color: #0437F2;
+	text-align: left;		
+}
+
+.container .form {
+	width: 100%;
+}
+
+.container .form .input-field {
+	margin-bottom: 15px;
+	display: flex;
+	align-items: center;
+}
+
+.container .form .input-field label {
+	/*border:  2px solid black;*/
+	width: 70%;
+	margin-right: 10px;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+#yearinput {
+	
+	margin-left: 66px;
+	/*background-color: red;*/
+}
+
+#monthinput {
+	margin-left: 5px;
+	/*background-color: navy;*/
+}
+
+.container .form .input-field .input,
+.container .form .input-field textarea {
+	border:  2px solid black;
+	width: 100%;
+	outline: none;
+	border: 1px solid black;
+	font-size: 15px;
+	padding: 8px 10px;
+	border-radius: 3px;
+	transition: all 0.5s ease;
+}
+
+.container .form .input-field textarea {
+	resize: none;
+	height: 50px;
+}
+
+.container .form .input-field .custom_select {
+	position: relative;
+	width: 100%;
+	height: 37px;
+}	
+
+.container .form .input-field .custom_select select{
+	-webkit-appearance:  none;
+	appearance: none;
+	width: 100%;
+	height: 100%;
+	padding: 8px 10px;
+	border: 1px solid black;
+	border-radius: 3px;
+	outline: none;
+}
+
+.container .form .input-field .custom_select:before {
+	content: "";
+	position: absolute;
+	top: 14px;
+	right: 10px;
+	border: 8px solid black;
+	border-color: grey transparent transparent transparent;
+}
+
+/*.container .form .input-field .select {
+	border: 1px solid black;
+	-webkit-appearance:  none;
+	appearance: none;
+}*/
+
+.container .form .input-field .input:focus,
+.container .form .input-field .textarea:focus,
+.container .form .input-field select:focus {
+	border: 1px solid navy;
+}
+
+.container .form .btn-field .btn {
+	width: 80px;
+	padding: 8px 10px;
+	font-size: 15px;
+	border: 1px solid black;
+	background-color: powderblue;
+	color: black;
+	cursor: pointer;
+	border-radius: 3px;
+	outline: none;
+	margin-left: 5px;
+}
+
+.container .form .input-field:last-child {
+	margin-bottom: 0;
+}
+
+.container .form .input-field .btn:hover {
+	background: skyblue;
+}
+
+input[type="radio"]{
+  margin: 0 2px 2px 1px;
+}
+
+@media (max-width: 420px) {
+	/*body {
+		background-color: navy;
+	}*/
+
+	.container .form .input-field {
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.container .form .input-field label {
+		width: 105%;
+		margin-bottom: 5px;
+	}
+
+	/*.container .form .input-field .btn {
+		margin-bottom: 5px;
+	}*/
+
+		#nextbutton {
+		display:inline-block;
+	  height: 35px;
+	  width: 35px;
+		border-radius: 100%;
+	}
+
+	#prevbutton {
+		display:inline-block;
+	  height: 35px;
+	  width: 35px;
+		border-radius: 100%;
+	}
+}

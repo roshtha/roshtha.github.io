@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Cancer Screening Survey Form</title>
+	<link rel="stylesheet" type="text/css" href="scripts/assets/css/ScreeningSurvey.css">
+	<link rel="manifest" href="manifest.json">
+	<!--iOS support-->
+	<link rel="apple-touch-icon" href="icons/icon-96.png">
+	<meta name="apple-mobile-web-app-status-bar" content="#00695c">
+	<meta name="theme-color" content="#00695c">
+	<!--iOS support-->		
+</head>
+
+
+
+
+<body>
+	<div class="container">
+
+		<div class="title">
+			Cancer Screening Survey 
+			<p style="float: right;"><a href="Menu.html">Menu</a></p> 
+		</div>
+		
+		<div class="form">
+			<form name="patientForm">	
+			<div class="input-field">
+				<label>1.Education</label>
+				<div class="custom_select">
+				<select id="education">
+					<option>Select</option>
+					<option>Matriculate</option>
+					<option>Intermediate</option>
+					<option>Diploma</option>
+					<option>Grdauate</option>
+				</select>
+				</div>
+			</div>
+
+			<div class="input-field">
+				<label>2.Job</label>
+				<div class="custom_select">
+				<select id="job">
+					<option>Select</option>
+					<option>Government Service</option>
+					<option>Private Job</option>
+					<option>Business</option>
+				</select>
+				</div>
+			</div>
+
+			<div class="input-field">
+				<label>3.Monthly Income</label>
+				<div class="custom_select">
+				<select id="income">
+					<option>Select</option>
+					<option>< Rs.50000</option>
+					<option>< Rs.1 LPA</option>
+					<option>< Rs.2 LPA</option>
+					<option>> Rs.3 LPA</option>
+				</select>
+				</div>
+			</div>
+
+			<div class="input-field">
+				<label>4.Food Habits</label>
+				<table>
+					<tr>               
+		                <td>
+		                    <input type="radio" name="food" id="food">Veg
+		                    <input type="radio" name="food" id="food">Non-veg
+		                </td>															
+            		</tr>
+				</table>
+			</div>						
+
+			<div class="input-field">
+				<label>5.Currently a cancer patient?</label>
+				<table>
+					<tr>               
+		                <td>
+		                    <input type="radio" name="currentstatus" id="currentstatus">Yes
+		                    <input type="radio" name="currentstatus" id="currentstatus">No
+		                </td>															
+            		</tr>
+				</table>
+			</div>	
+
+			<div class="input-field">
+				<label>6.Any other serious illness?</label>
+				<table>
+					<tr>               
+		                <td>
+		                    <input type="radio" name="anyotherillness" id="anyotherillness">Yes
+		                    <input type="radio" name="anyotherillness" id="anyotherillness">No
+		                </td>															
+            		</tr>
+				</table>
+			</div>
+
+			<div class="input-field">
+				<label>7.Any cancer death in the family?</label>
+				<table>
+					<tr>               
+		                <td>
+		                    <input type="radio" name="cancerdeath" id="cancerdeath">Yes
+		                    <input type="radio" name="cancerdeath" id="cancerdeath">No
+		                </td>															
+            		</tr>
+				</table>
+			</div>
+
+			<div class="input-field">
+				<label>8.Has anybody from the family registered at RCC?</label>
+				<table>
+					<tr>               
+		                <td>
+		                    <input type="radio" name="registeredinRCC" id="registeredinRCC">Yes
+		                    <input type="radio" name="registeredinRCC" id="registeredinRCC">No
+		                </td>															
+            		</tr>
+				</table>
+			</div>	
+
+			<div class="input-field">
+				<label>9.Do you smoke?</label>
+				<table>
+					<tr>               
+		                <td>
+		                    <input type="radio" name="smoke" id="smoke">Yes
+		                    <input type="radio" name="smoke" id="smoke">No
+		                </td>															
+            		</tr>
+				</table>
+			</div>	
+
+			<div class="input-field">
+				<label>10.Do you chew tobacco?</label>
+				<table>
+					<tr>               
+		                <td>
+		                    <input type="radio" name="tobacco" id="tobacco">Yes
+		                    <input type="radio" name="tobacco" id="tobacco">No
+		                </td>															
+            		</tr>
+				</table>
+			</div>	
+
+			<div class="input-field">
+				<label>11.Do you drink alcohol?</label>
+				<table>
+					<tr>               
+		                <td>
+		                    <input type="radio" name="alcohol" id="alcohol">Yes
+		                    <input type="radio" name="alcohol" id="alcohol">No
+		                </td>															
+            		</tr>
+				</table>
+			</div>			
+
+			<div class="btn-field">
+				<!-- <input type="submit" style='margin-right:16px' class="btn" value="SUBMIT">
+				<input type="button" class="btn" value="CLEAR">
+				<input type="button" class="btn" id="nextbutton" value=">>"> -->
+
+				<input type="button" class="btn" id="prevbutton" onclick="MainPageFn()" value="<<">
+				<input type="submit" style='margin-right:16px' class="btn" value="SUBMIT">
+				<input type="button" class="btn" value="CLEAR">
+				<input type="button" class="btn" id="nextbutton" onclick="OralFn()" value=">>">
+			</div>	
+			</form>				
+		</div>
+		
+	</div>
+	<script>
+		function MainPageFn() {
+			document.location.href="Menu.html"; 
+		}
+		
+		function OralFn() {
+			document.location.href="Oral.html"; /*Page name or Path*/ 
+		}
+	</script>
+	<!-- <script src="scripts/js/app.js"></script>  -->
+ 	<script type="text/javascript" src="scripts/js/promise.js"></script>
+	<script type="text/javascript" src="scripts/js/fetch.js"></script>
+	<script type="text/javascript" src="scripts/js/app.js"></script>	
+	<script type="module" src="scripts/js/ssapp.js"></script>
+</body>
+</html>
