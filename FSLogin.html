@@ -421,18 +421,8 @@
 				axios
 			       // .post(Global_id+'/Rest/usermanagementservice/readuserlist_global',pdata, )
 			        
-			        //.get('https://jsonplaceholder.typicode.com/todos?_limit=5')
-			        /*
-			        Ref: https://jasonwatmore.com/post/2021/06/25/axios-http-post-request-examples
-			        const article = { title: 'Axios POST Request Example' };
-					const headers = { 
-					    'Authorization': 'Bearer my-token',
-					    'My-Custom-Header': 'foobar'
-					};
-					axios.post('https://reqres.in/api/articles', article, { headers })
-
-
-        			*/
+			        .get('https://jsonplaceholder.typicode.com/todos?_limit=5')
+			        
 			        .then((response) => {
 			        	console.log(JSON.stringify(response));
 			            const dbOpenRequest = indexedDB.open('DigiPathoFSDB', 2);
