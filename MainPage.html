@@ -23,476 +23,236 @@
 <!DOCTYPE html>
 <html lang="en">
 
-	<head>
-	    <title></title>  
-	    <!-- For sct  Telemedicine Solution for Tribal Care -->
-	  	<!--   <title>Telemedicine Solution for Oncology</title> -->
-	   
-	    <!-- Meta -->
-	    <meta charset="utf-8">
-	    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-	    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	    <meta name="description" content="Phoenixcoded">
-	    <meta name="keywords" content=", Flat ui, Admin , Responsive, Landing, Bootstrap, App, Template, Mobile, iOS, Android, apple, creative app">
-	    <meta name="author" content="Phoenixcoded">
-	   	<!--  <meta http-equiv="refresh" content="${pageContext.session.maxInactiveInterval};url=login.html"> -->
-	    <!--for snomed -->
-	 	<!-- <link rel="stylesheet" href="../../snomed-css/jquery-ui.css"> -->
-	    <!-- Favicon icon logo for sct --> 
-	   	<!--  <link rel="icon" href="../../scripts/assets/images/sethu_logo_icon.ico" type="image/x-icon"> -->
-	   	<!-- Favicon icon logo for rcc --> 
-	   	<!--  <link rel="icon" href="../../scripts/assets/images/rcc_logo_icon.ico" type="image/x-icon"> -->
-	    <!-- Google font-->
-	    <!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet"> -->
-	    <!-- <link rel="stylesheet" type="text/css" href="../../scripts/css/google_font.css">  -->
-	    <!-- Font Awesome -->
-	    <!-- <link rel="stylesheet" type="text/css" href="../../scripts/assets/icon/font-awesome/css/font-awesome.min.css">  -->
-	    <!-- Material Icon -->
-	    <!-- <link rel="stylesheet" type="text/css" href="../../scripts/assets/icon/material-design/css/material-design-iconic-font.min.css">  -->
-	    <!-- Required Fremwork -->
-	    <!-- <link rel="stylesheet" type="text/css" href="../../scripts/bower_components/bootstrap/css/bootstrap.min.css"> -->
-	    
-	    <!-- themify-icons line icon -->
-	    <!-- <link rel="stylesheet" type="text/css" href="../../scripts/assets/icon/themify-icons/themify-icons.css"> --> <!-- down arrow icon beside username-->
-	    <link rel="stylesheet" type="text/css" href="scripts/assets/icon/themify-icons/themify-icons.css">  <!-- down arrow icon beside username-->
-	    <!-- ico font -->
-	    <!-- <link rel="stylesheet" type="text/css" href="../../scripts/assets/icon/icofont/css/icofont.css">  --> 
-	    <!-- flag icon framework css -->
-	    <!-- <link rel="stylesheet" type="text/css" href="../../scripts/assets/pages/flag-icon/flag-icon.min.css">  --> 
-	    <!-- Menu-Search css -->
-	    <!-- <link rel="stylesheet" type="text/css" href="../../scripts/assets/pages/menu-search/css/component.css"> --> 
-	    <!--  <link rel="stylesheet" type="text/css" href="scripts/assets/pages/menu-search/css/component.css">  -->
-	    <!-- Style.css -->
-	    <!-- <link rel="stylesheet" type="text/css" href="../../scripts/assets/css/style.css"> <!-- navbar css -->
-	    <link rel="stylesheet" type="text/css" href="scripts/assets/css/style.css"> <!-- navbar css -->
-	    <!--color css-->
-		<!-- <link rel="stylesheet" type="text/css" href="../../scripts/assets/css/linearicons.css" >
+<head>
+<title></title>
+<!-- For sct  Telemedicine Solution for Tribal Care -->
+<!--   <title>Telemedicine Solution for Oncology</title> -->
+
+<!-- Meta -->
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="description" content="Phoenixcoded">
+<meta name="keywords"
+	content=", Flat ui, Admin , Responsive, Landing, Bootstrap, App, Template, Mobile, iOS, Android, apple, creative app">
+<meta name="author" content="Phoenixcoded">
+<!--  <meta http-equiv="refresh" content="${pageContext.session.maxInactiveInterval};url=login.html"> -->
+<!--for snomed -->
+<!-- <link rel="stylesheet" href="../../snomed-css/jquery-ui.css"> -->
+<!-- Favicon icon logo for sct -->
+<!--  <link rel="icon" href="../../scripts/assets/images/sethu_logo_icon.ico" type="image/x-icon"> -->
+<!-- Favicon icon logo for rcc -->
+<!--  <link rel="icon" href="../../scripts/assets/images/rcc_logo_icon.ico" type="image/x-icon"> -->
+<!-- Google font-->
+<!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet"> -->
+<!-- <link rel="stylesheet" type="text/css" href="../../scripts/css/google_font.css">  -->
+<!-- Font Awesome -->
+<!-- <link rel="stylesheet" type="text/css" href="../../scripts/assets/icon/font-awesome/css/font-awesome.min.css">  -->
+<!-- Material Icon -->
+<!-- <link rel="stylesheet" type="text/css" href="../../scripts/assets/icon/material-design/css/material-design-iconic-font.min.css">  -->
+<!-- Required Fremwork -->
+<!-- <link rel="stylesheet" type="text/css" href="../../scripts/bower_components/bootstrap/css/bootstrap.min.css"> -->
+
+<link rel="stylesheet" href="scripts/assets/css/tablestyle.css">
+<!--Source: font awesome cdn (https://cdnjs.com/libraries/font-awesome) -->
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<!--Source: jquery cdn (https://bootstrapcdn-dev-pr-1284.herokuapp.com/fontawesome/)-->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="scripts/js/tableManager.js"></script>
+<!-- themify-icons line icon -->
+<!-- <link rel="stylesheet" type="text/css" href="../../scripts/assets/icon/themify-icons/themify-icons.css"> -->
+<!-- down arrow icon beside username-->
+<link rel="stylesheet" type="text/css"
+	href="scripts/assets/icon/themify-icons/themify-icons.css">
+<!-- down arrow icon beside username-->
+<!-- ico font -->
+<!-- <link rel="stylesheet" type="text/css" href="../../scripts/assets/icon/icofont/css/icofont.css">  -->
+<!-- flag icon framework css -->
+<!-- <link rel="stylesheet" type="text/css" href="../../scripts/assets/pages/flag-icon/flag-icon.min.css">  -->
+<!-- Menu-Search css -->
+<!-- <link rel="stylesheet" type="text/css" href="../../scripts/assets/pages/menu-search/css/component.css"> -->
+<!--  <link rel="stylesheet" type="text/css" href="scripts/assets/pages/menu-search/css/component.css">  -->
+<!-- Style.css -->
+<!-- <link rel="stylesheet" type="text/css" href="../../scripts/assets/css/style.css"> <!-- navbar css -->
+<link rel="stylesheet" type="text/css"
+	href="scripts/assets/css/style.css">
+<!-- navbar css -->
+<!--color css-->
+<!-- <link rel="stylesheet" type="text/css" href="../../scripts/assets/css/linearicons.css" >
 		<link rel="stylesheet" type="text/css" href="../../scripts/assets/css/simple-line-icons.css">
 		<link rel="stylesheet" type="text/css" href="../../scripts/assets/css/ionicons.css">
 		<link rel="stylesheet" type="text/css" href="../../scripts/assets/css/jquery.mCustomScrollbar.css"> -->
-	 	<!-- Date-Dropper css -->
-	    <!-- <link rel="stylesheet" type="text/css" href="../../scripts/bower_components/datedropper/css/datedropper.min.css" /> -->
-	      
-	    <!-- <link rel="stylesheet" type="text/css" href="../../scripts/css/jquery.dataTables.min.css" /> -->
-		<!-- <link rel="stylesheet" type="text/css" href="../../scripts/css/responsive.dataTables.min.css" /> -->
-		<!-- <link rel="stylesheet" type="text/css" href="../../scripts/css/select.dataTables.min.css" /> -->
-	
-		<!-- <link rel="stylesheet" type="text/css" href="../../scripts/assets/css/MPstyle.css">  --> <!-- navbar css -->
-		<!-- <link rel="stylesheet" type="text/css" href="../../scripts/assets/css/MainPageStyle.css">  --> <!-- main content css -->
-		
-		<link rel="stylesheet" type="text/css" href="scripts/assets/css/MPstyle.css"> <!-- navbar css -->
-		<link rel="stylesheet" type="text/css" href="scripts/assets/css/MainPageStyle.css"> <!-- main content css -->		
-		<!-- <link rel="manifest" href="../../manifest.json">  -->
-		<link rel="manifest" href="manifest.json">
-		<!--iOS support-->
-		<link rel="apple-touch-icon" href="icons/icon-96.png">
-		<meta name="apple-mobile-web-app-status-bar" content="#00695c">
-		<meta name="theme-color" content="#00695c">
-		<!--iOS support-->		
-		<!--for responsive table -->
-		<!-- <link rel="stylesheet" href="../../scripts/css/table-responsive.css"> -->
-		<!-- Timeline css -->
-		<!-- <link rel="stylesheet" type="text/css" href="../../scripts/assets/pages/social-timeline/timeline.css">  -->
-	 	<!-- light gallery css -->
-	   	<!-- <link rel="stylesheet" type="text/css" href="../../scripts/bower_components/lightgallery/css/lightgallery.min.css"> -->
-	    
-		<!-- For session timeout -->
-	   	<!--  <link rel="stylesheet" href="../../scripts/assets/css/jquery-ui.min.css"> -->
-		<!-- added by jiji -->
-	   	 
-	   	<!-- <script type="text/javascript"  src="../../scripts/openseadragon-bin-2.4.2/openseadragon.min.js"></script> -->
-    	<!-- <script type="text/javascript"  src="../../scripts/openseadragon-bin-2.4.2/annotorious-openseadragon-2.1.1/openseadragon-annotorious.min.js"></script> -->
-    	<!-- <link rel="stylesheet" href="../../scripts/openseadragon-bin-2.4.2/annotorious-openseadragon-2.1.1/annotorious.min.css"> -->
-    	
-		<!-- end by jiji -->
-		
+<!-- Date-Dropper css -->
+<!-- <link rel="stylesheet" type="text/css" href="../../scripts/bower_components/datedropper/css/datedropper.min.css" /> -->
 
-		
-			
-		<!-- trial 2 by Subhadip-->
-		  	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> -->
-  			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" /> <!-- the + button got misplaced -->
-  			<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
-  		<!-- trial 2 by Subhadip-->
-		<script type="text/javascript">
+<!-- <link rel="stylesheet" type="text/css" href="../../scripts/css/jquery.dataTables.min.css" /> -->
+<!-- <link rel="stylesheet" type="text/css" href="../../scripts/css/responsive.dataTables.min.css" /> -->
+<!-- <link rel="stylesheet" type="text/css" href="../../scripts/css/select.dataTables.min.css" /> -->
+
+<!-- <link rel="stylesheet" type="text/css" href="../../scripts/assets/css/MPstyle.css">  -->
+<!-- navbar css -->
+<!-- <link rel="stylesheet" type="text/css" href="../../scripts/assets/css/MainPageStyle.css">  -->
+<!-- main content css -->
+<link rel="stylesheet" href="scripts/assets/css/tablestyle.css">
+<link rel="stylesheet" type="text/css"
+	href="scripts/assets/css/MPstyle.css">
+<!-- navbar css -->
+<link rel="stylesheet" type="text/css"
+	href="scripts/assets/css/MainPageStyle.css">
+<!-- main content css -->
+<!-- <link rel="manifest" href="../../manifest.json">  -->
+<link rel="manifest" href="manifest.json">
+<!--iOS support-->
+<link rel="apple-touch-icon" href="icons/icon-96.png">
+<meta name="apple-mobile-web-app-status-bar" content="#00695c">
+<meta name="theme-color" content="#00695c">
+<!--iOS support-->
+<!--for responsive table -->
+<!-- <link rel="stylesheet" href="../../scripts/css/table-responsive.css"> -->
+<!-- Timeline css -->
+<!-- <link rel="stylesheet" type="text/css" href="../../scripts/assets/pages/social-timeline/timeline.css">  -->
+<!-- light gallery css -->
+<!-- <link rel="stylesheet" type="text/css" href="../../scripts/bower_components/lightgallery/css/lightgallery.min.css"> -->
+
+<!-- For session timeout -->
+<!--  <link rel="stylesheet" href="../../scripts/assets/css/jquery-ui.min.css"> -->
+<!-- added by jiji -->
+
+<!-- <script type="text/javascript"  src="../../scripts/openseadragon-bin-2.4.2/openseadragon.min.js"></script> -->
+<!-- <script type="text/javascript"  src="../../scripts/openseadragon-bin-2.4.2/annotorious-openseadragon-2.1.1/openseadragon-annotorious.min.js"></script> -->
+<!-- <link rel="stylesheet" href="../../scripts/openseadragon-bin-2.4.2/annotorious-openseadragon-2.1.1/annotorious.min.css"> -->
+
+<!-- end by jiji -->
+
+
+
+
+<!-- trial 2 by Subhadip-->
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+<!-- the + button got misplaced -->
+<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+<!-- trial 2 by Subhadip-->
+<script type="text/javascript">
             function refreshPage() {
                 if (confirm("Are you sure, want to refresh?")) {
                     location.reload();
                 }
             }
         </script>
-        
-		<!-- code added by Subhadip -->
-		  <!-- <link rel="manifest" href="../../manifest.json"> -->
-		  <!-- <link rel="manifest" href="manifest.json">
-		  <!--iOS support--> 
-		  <!-- <link rel="apple-touch-icon" href="icons/icon-96.png">
-		  <meta name="apple-mobile-web-app-status-bar" content="#00695c">
-		  <meta name="theme-color" content="#00695c"> -->
-		  <!--iOS support-->
-		<!-- code added by Subhadip -->
-	</head>
 
-	<!-- <style type="text/css">
-		/* On click event to work in an embed tag */
-		embed{
-		     pointer-events: none;
-		}
-		
-		embed a {
-		    display:inline-block;
-		}
-		
-		/* On click event to work in an embed tag */
-		
-		body {
-		  /* Disables pull-to-refresh but allows overscroll glow effects. */
-		  overscroll-behavior-y: contain;
-		}
-	</style>  -->
+</head>
+
 
 
 <!-- Bodyyyyyyyyyyyyy startsssss -->
 
 <!-- Main Page navbar starts -->
-	<body>
+<body onload="start();">
 
 	<nav class="navigation-div">
 		<div class="nav-left navigation-div">
 			<!-- <img src="images/logos.png" class="logos"> -->
-			<img src="views/digipathofs/images/logos.png" class="logos">
+			<img src="views/digipathofs/images/dctcfslogo.png" class="logos" style="width:60px">
 		</div>
 		<div class="nav-middle navigation-div">
 			<div class="search-box navigation-div">
-				<input type="text" name="" placeholder="Name / Aadhaar / Mobile">
+				<input type="text" name="" id="myInput"
+					placeholder="Name / Aadhaar / Mobile" onkeyup="searchFun()">
 				<!-- <img src="images/search.png"> -->
 				<img src="views/digipathofs/images/search.png">
 			</div>
 		</div>
 		<div class="nav-right navigation-div">
-			<!-- <img src="images/upload.png">
-			<img src="images/more.png">
-			<img src="images/notification.png"> -->
-			<!--  <img src="images/cwlogo.jpg" class="channel-logo"> -->
-						<ul>
-							<!-- <li><a href="#">Pages +</a>
-									<ul>
-										<li><a href="#">blogs</a></li>
-										<li><a href="#">sevices</a></li>
-										<li><a href="#">photos</a></li>
-									</ul>
-							</li> -->		
-							<li class="user-profile header-notification">
-		                                    <a href="#!" style="height: 40px;">
-		                                        <!-- <img src="../../scripts/assets/images/user.png" alt="User-Profile-Image">  -->
-		                                        <img src="scripts/assets/images/user.png" alt="User-Profile-Image">
-		                                        <span id='userNameProfileDisplayID'></span>
-		                                        <i class="ti-angle-down"></i>
-		                                    </a>
-		                                    <ul class="show-notification profile-notification">
-		                                    	<li>
-		                                            <a id="user-profile" href="#">
-		                                                <i class="ti-user"></i> Profile
-		                                            </a>
-		                                        </li>
-		                                      	<li>
-													 <a href="#!" id="changepwd" data-toggle="modal" data-target="#change_password">
-		                                             	<i data-toggle="modal" data-target="#change_password" class="ti-user"></i> Change Password
-		                                             </a>
-		                                      	</li>
-		                                      	<li>
-		                                            <!-- <a href="#!" onclick="require(['main_Page'],function(mp){mp.logout();});">
+			<ul>
+
+				<li class="user-profile header-notification"><a href="#!"
+					style="height: 40px;"> <!-- <img src="../../scripts/assets/images/user.png" alt="User-Profile-Image">  -->
+						<img src="scripts/assets/images/user.png" alt="User-Profile-Image">
+						<span id='userNameProfileDisplayID'></span> <i
+						class="ti-angle-down"></i>
+				</a>
+					<ul class="show-notification profile-notification">
+						<li><a id="user-profile" href="#"> <i class="ti-user"></i>
+								Profile
+						</a></li>
+						<li><a href="#!" id="changepwd" data-toggle="modal"
+							data-target="#change_password"> <i data-toggle="modal"
+								data-target="#change_password" class="ti-user"></i> Change
+								Password
+						</a></li>
+						<li>
+							<!-- <a href="#!" onclick="require(['main_Page'],function(mp){mp.logout();});">
 		                                                <i class="ti-layout-sidebar-left" ></i> Logout
-		                                            </a>  -->
-		                                            <a href="#!" onclick="LoginFn();">
-		                                                <i class="ti-layout-sidebar-left" ></i> Logout
-		                                            </a>		                                            
-		                                            
-		                                        </li>
-		                                    </ul>
-	                                	</li> 
-						</ul>
+		                                            </a>  --> <a href="#!"
+							onclick="LoginFn();"> <i class="ti-layout-sidebar-left"></i>
+								Logout
+						</a>
+
+						</li>
+					</ul></li>
+			</ul>
 		</div>
 	</nav>
-	
+
 	<!-- Main Page navbar ends -->
 
-<!-- Main Page body starts -->
-<!-- <div class="myDiv">
-  <h3>Statistics</h3>
-  <p>div with some user statistics<p>
-</div>  -->
+	<!-- Main Page body starts -->
 
-<!--  <div class="myDiv">
-  <h3>Person Details</h3>
-  <button class="addButton" onClick="myonClickFn()">+</button>
-</div> ->
-
-<!--
-<div class="myDiv">
-  <h3>Disease Screening Forms</h3>
-  <button class="screeningButton" onClick="onClickCan()">Cancer</button>
-  <button class="screeningButton" onClick="onClickOraCan()">Oral Cancer</button>
-  <button class="screeningButton" onClick="onClickCerCan()">Cervical Cancer</button>
-  <button class="screeningButton" onClick="onClickBreCan()">Breast Cancer</button>
-  <button class="screeningButton" onClick="onClickComCan()">Common Cancer</button> 
-</div>
--->
-
-
-
-  <!--
-  <h4>Name/Age/Gender/Mob/Address  <a href="url">Screening Form</a> </h4>
-  <h4>Name/Age/Gender/Mob/Address  <a href="url">Screening Form</a> </h4>
-  <h4>Name/Age/Gender/Mob/Address  <a href="url">Screening Form</a> </h4>
-  <h4>Name/Age/Gender/Mob/Address  <a href="url">Screening Form</a> </h4>
--->  
-	<!-- <div class="table-container">
-		<table class="table">
-			<thead>
-				<tr>
-					<th>Name</th>
-					<th>Age</th>
-					<th>Gender</th>
-					<th>Mobile</th>
-					<th>Address</th>
-					<th>Screening Form</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td data-label="Name">Jeni George</td>
-					<td data-label="Age">35</td>
-					<td data-label="Gender">Female</td>
-					<td data-label="Mobile">7894561230</td>
-					<td data-label="Address">Thiruvananthapuram</td>
-					<td><a href="#" class="btn" onClick="onClickMenu()">Screening Form</a></td>
-				</tr>
-				<tr>
-					<td data-label="Name">Arpit Ramasamy</td>
-					<td data-label="Age">22</td>
-					<td data-label="Gender">Male</td>
-					<td data-label="Mobile">9894561232</td>
-					<td data-label="Address">Ernakulam</td>
-					<td><a href="#" class="btn" onClick="">Screening Form</a></td>
-				</tr>
-				<tr>
-					<td data-label="Name">Vaishali Vasumathi</td>
-					<td data-label="Age">42</td>
-					<td data-label="Gender">Female</td>
-					<td data-label="Mobile">8794561237</td>
-					<td data-label="Address">Wayanad</td>
-					<td><a href="#" class="btn">Screening Form</a></td>
-				</tr>
-				<tr>
-					<td data-label="Name">Aadhya Ramakrishnan</td>
-					<td data-label="Age">25</td>
-					<td data-label="Gender">Female</td>
-					<td data-label="Mobile">9984561233</td>
-					<td data-label="Address">Kannur</td>
-					<td><a href="#" class="btn">Screening Form</a></td>
-				</tr>					
-			</tbody>
-		</table>
-	</div> -->
-		<div class="tabletop">
+	<div class="tabletop">
 		<div class="table-header">
-			<h4>Person Details</h4>
-			<div>		
-				<button class="add_new" onClick="myonClickFn()">+ Add New</button>		
+			<h3>Person Details</h3>
+			<div>
+				<button class="add_new" onClick="myonClickFn()">+ Add New</button>
 			</div>
-		</div>	
-	    <div class="header_fixed">
-	        <table>
-	            <thead>
-	                <tr>
-	                    <th>Name</th>
-	                    <th>Age</th>
-	                    <th>Gender</th>
-	                    <th>Phone</th>
-	                    <th>Address</th>
-	                </tr>
-	            </thead>
-	            <tbody>
-	                <tr>
-	                    <td><a href="Menu.html">Jeni George</a></td>
-	                    <td>35</td>
-	                    <td>Female</td>
-	                    <td>7894561230</td>
-	                    <td>Thiruvananthapuram</td>
-	                </tr>
-	                <tr>
-	                    <td><a href="#">Anjali Gupta</a></td>
-	                    <td>42</td>
-	                    <td>Female</td>
-	                    <td>7894561230</td>
-	                    <td>Ernakulam</td>
-	                </tr>
-	                <tr>
-	                    <td><a href="#">Aniruddha Sen</a></td>
-	                    <td>33</td>
-	                    <td>Male</td>
-	                    <td>7894561230</td>
-	                    <td>Kozhikode</td>
-	                </tr>
-	                <tr>
-	                    <td><a href="#">Aadhya Ramakrishnan</a></td>
-	                    <td>34</td>
-	                    <td>Female</td>
-	                    <td>7894561230</td>
-	                    <td>Thrissur</td>
-	                </tr>
-	               <tr>
-	                    <td><a href="#">Shweta Garg</a></td>
-	                    <td>21</td>
-	                    <td>Female</td>
-	                    <td>7894561230</td>
-	                    <td>Kannur</td>
-	                </tr>                
-	                <tr>
-	                    <td><a href="#">Vaishali Vasumathi</a></td>
-	                    <td>48</td>
-	                    <td>Female</td>
-	                    <td>7894561230</td>
-	                    <td>Palakkad</td>
-	                </tr>
-	                <tr>
-	                    <td><a href="#">Arpit Ramasamy</a></td>
-	                    <td>51</td>
-	                    <td>Male</td>
-	                    <td>7894561230</td>
-	                    <td>Kasaragod</td>
-	                </tr>
-	                <tr>
-	                    <td><a href="#">Arpit Ramasamy</a></td>
-	                    <td>51</td>
-	                    <td>Male</td>
-	                    <td>7894561230</td>
-	                    <td>Kasaragod</td>
-	                </tr>
-	                <tr>
-	                    <td><a href="#">Arpit Ramasamy</a></td>
-	                    <td>51</td>
-	                    <td>Male</td>
-	                    <td>7894561230</td>
-	                    <td>Kasaragod</td>
-	                </tr>	 
-	                <tr>
-	                    <td><a href="#">Arpit Ramasamy</a></td>
-	                    <td>51</td>
-	                    <td>Male</td>
-	                    <td>7894561230</td>
-	                    <td>Kasaragod</td>
-	                </tr>
-	                <tr>
-	                    <td><a href="#">Arpit Ramasamy</a></td>
-	                    <td>51</td>
-	                    <td>Male</td>
-	                    <td>7894561230</td>
-	                    <td>Kasaragod</td>
-	                </tr>
-	                <tr>
-	                    <td><a href="#">Arpit Ramasamy</a></td>
-	                    <td>51</td>
-	                    <td>Male</td>
-	                    <td>7894561230</td>
-	                    <td>Kasaragod</td>
-	                </tr>
-	                <tr>
-	                    <td><a href="#">Arpit Ramasamy</a></td>
-	                    <td>51</td>
-	                    <td>Male</td>
-	                    <td>7894561230</td>
-	                    <td>Kasaragod</td>
-	                </tr>	 
-	                <tr>
-	                    <td><a href="#">Prakhar Ramasamy</a></td>
-	                    <td>51</td>
-	                    <td>Male</td>
-	                    <td>7894561230</td>
-	                    <td>Kasaragod</td>
-	                </tr>	
-	                <tr>
-	                    <td><a href="#">Ashish Ramasamy</a></td>
-	                    <td>51</td>
-	                    <td>Male</td>
-	                    <td>7894561230</td>
-	                    <td>Kasaragod</td>
-	                </tr>		                
-	                	                               	                	                	                               	                
-	            </tbody>
-	        </table>
-	    </div>
-    </div>
+		</div>
+		<div class="header_fixed" id="mainContent">
+			<!--Table starts-->
+			<table id="display_person" class="tablemanager">
+				<!-- jquery plugin class -->
+				<thead>
+					<tr  >
+						<th style="display:none;">ID</th>
+						<th>Name</th>
+						<th>Age</th>
+						<th>Gender</th>
+						<th>Phone</th>
+						<th>Address</th>
+
+					</tr>
 
 
-<!-- Main Page body ends -->
-<!-- Bodyyyyyyyyyyyyy endssssss -->
-    
-    
-	
-	<!--  <script type="text/javascript" src="scripts/bower_components/jquery/js/jquery.min.js"></script>  
-    <script type="text/javascript" src="scripts/bower_components/jquery-ui/js/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="scripts/bower_components/popper.js/js/popper.min.js"></script>
-    <script type="text/javascript" src="scripts/bower_components/bootstrap/js/bootstrap.min.js"></script>  -->  
-	 
-	
-     
-     <!-- jquery slimscroll js  -->
-    <!--  <script type="text/javascript" src="scripts/bower_components/jquery-slimscroll/js/jquery.slimscroll.js"></script>  <!-- slimscroll related with jquery.min.js--> 
-   <!--  modernizr js  -->
-     <!-- <script type="text/javascript" src="scripts/bower_components/modernizr/js/modernizr.js"></script> 
-    <script type="text/javascript" src="scripts/bower_components/modernizr/js/css-scrollbars.js"></script>  -->
+				</thead>
 
-    <!-- classie js -->
-   <!-- <script type="text/javascript" src="scripts/bower_components/classie/js/classie.js"></script> -->
+				<tbody id="tbl_body" >
+				
+					
+				</tbody>
 
-    <!-- i18next.min.js end -->
-  
-   <!-- <script type="text/javascript" src="scripts/bower_components/i18next/js/i18next.min.js"></script>
-    <script type="text/javascript" src="scripts/bower_components/i18next-xhr-backend/js/i18nextXHRBackend.min.js"></script>
-    <script type="text/javascript" src="scripts/bower_components/i18next-browser-languagedetector/js/i18nextBrowserLanguageDetector.min.js"></script>
-    <script type="text/javascript" src="scripts/bower_components/jquery-i18next/js/jquery-i18next.min.js"></script> --> 
-     
-    <!-- Custom js -->
-    <!-- <script type="text/javascript" src="../../scripts/assets/js/script.js"></script>
-    <script src="../../scripts/assets/js/pcoded.min.js"></script>
-	<script src="../../scripts/assets/js/demo-12.js"></script>
-	<script src="../../scripts/assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
-	<script src="../../scripts/assets/js/jquery.mousewheel.min.js"></script>
-	<script src="../../scripts/js/jqueryblockUI.js"></script>  -->
-	
-	<!-- <script type="text/javascript" src="scripts/assets/js/script.js"></script> -->
-    <!-- <script src="scripts/assets/js/pcoded.min.js"></script>
-	<script src="scripts/assets/js/demo-12.js"></script>
-	<script src="scripts/assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
-	<script src="scripts/assets/js/jquery.mousewheel.min.js"></script>
-	<script src="scripts/js/jqueryblockUI.js"></script>  -->
-	 
-	<!-- trial 1 by Subhadip starts-->
-	<!-- 
-	<script type="text/javascript">
-	
-	fetch('https://api.covid19api.com/summary').then((apidata) => {
-		console.log(apidata);
-		return apidata.json();
-	}).then((actualdata) => {
-		console.log(actualdata);
-		//console.log(actualdata.Countries[77]);
-		//console.log(actualdata.Countries[77].Country);
-		//const mydata = actualdata.Countries[77].Country;
-		const mydata = actualdata.Countries[77];
-		//document.getElementById('apiIndia').innerHTML = mydata;
-		document.getElementById('apiIndia').innerHTML = `Name of the country: ${mydata.Country} <br> Total confirmed cases: ${mydata.TotalConfirmed} <br> Total deaths: ${mydata.TotalDeaths} <br> Total recovered cases: ${mydata.TotalRecovered}`;
-	}).catch((error) => {
-		//console.log(error);
-		console.log(`The Error: ${error}`);
-	});	//fetch method returns a promise, whenever promise returns a data we will use .then method to consume the data.
+			</table>
+			
+			<!--Table ends-->
+		</div>
+	</div>
 
-</script>
-	-->
-	<!-- trial 1 by Subhadip ends-->
-	
+
+	<!-- Main Page body ends -->
+	<!-- Bodyyyyyyyyyyyyy endssssss -->
+
+	<footer class="footer">
+		<div class="footer-left">
+			<img src="scripts/assets/images/cdac3.png" alt="">
+		</div>
+		<div class="footer-bottom">
+			<p>Developed by Centre for Development of Advanced Computing,
+				Thiruvananthapuram</p>
+		</div>
+	</footer>
+
 	<script>
 		function onClickMenu() {
 			document.location.href="Menu.html"; /*Page name or Path*/ 
@@ -523,241 +283,184 @@
 			document.location.href="Others.html"; /*Page name or Path*/ 
 		}	
 	</script>
-	
-	<!-- 
-	<script>
-$(document).ready(function(){
-
- load_json_data('state');
-
- function load_json_data(id, parent_id)
- {
-  var html_code = '';
-  $.getJSON('state_city_hospital.json', function(data){
-
-   html_code += '<option value="">Select '+id+'</option>';
-   $.each(data, function(key, value){
-    if(id == 'state')
-    {
-     if(value.parent_id == '0')
-     {
-      html_code += '<option value="'+value.id+'">'+value.name+'</option>';
-     }
-    }
-    else
-    {
-     if(value.parent_id == parent_id)
-     {
-      html_code += '<option value="'+value.id+'">'+value.name+'</option>';
-     }
-    }
-   });
-   $('#'+id).html(html_code);
-  });
-
- }
-
- $(document).on('change', '#state', function(){
-  var state_id = $(this).val();
-  if(state_id != '')
-  {
-   load_json_data('city', state_id);
-  }
-  else
-  {
-   $('#city').html('<option value="">Select city</option>');
-   $('#hospital').html('<option value="">Select hospital</option>');
-  }
- });
- $(document).on('change', '#city', function(){
-  var city_id = $(this).val();
-  if(city_id != '')
-  {
-   load_json_data('hospital', city_id);
-  }
-  else
-  {
-   $('#hospital').html('<option value="">Select hospital</option>');
-  }
- });
-});
-</script>
-	-->
-	
-	<!-- requirejs   --><!-- code added by jeni -->
-	
-	<!-- <script type="text/javascript"  data-main="../../scripts/main" src="../../scripts/requirejs/require.js"></script> -->
-	<!-- <script type="text/javascript"  data-main="scripts/main" src="scripts/requirejs/require.js"></script>  -->
 
 
-		
-	<!-- 	<script type="text/javascript"> 
-		 
- 
-			$( "#addPatient" ).click(function(){ 
-				 onchangeClick();
-				 $("#changeableDiv").load("reg/AddPatient.html"); 
-			});
-			
-			$( "#patientSummary" ).click(function(){
-				$("#changeableDiv").load("reg/patientSummary.html");
-				});
-
-			
-			$( "#patientProfile" ).click(function(){ 
-				 $("#changeableDiv").load("reg/PatientProfile.html"); 
-			}); 
-			$( "#doctorDashboard" ).click(function(){ 
-				 $("#changeableDiv").load("dasMob/DasDoctor.html"); 
-			});
-	 
-	 
-			
-			
-			$( "#cerviScan" ).click(function(){ 
-				 $("#changeableDiv").load("clini/Cerviscan.html"); 
-			});
-			
-			$( "#oral" ).click(function(){ 
-				 $("#changeableDiv").load("clini/Oral.html"); 
-			});
-			
-			
-			$( "#eyeExaminationid" ).click(function(){ 
-				 $("#changeableDiv").load("clini/EyeExam.html"); 
-			});
-			
-			$( "#SlideRegistration" ).click(function(){ 
-				 $("#changeableDiv").load("slideReg/SlideRegCerviscan.html"); 
-			});
-					
-			
-			$( "#SlideQRCode" ).click(function(){ 
-				 $("#changeableDiv").load("slideQR/SlideQRManagement.html"); 
-			});
-	
-			/*$( "#aimodelmanagement" ).click(function(){ 
-				 $("#changeableDiv").load("aiModel/AIModelmanagement.html"); 
-			});*/
-			
-			$( "#aiRepo" ).click(function(){ 
-				 $("#changeableDiv").load("aiModel/AIRepo.html"); 
-			});
-			
-			$( "#aiLive" ).click(function(){ 
-				 $("#changeableDiv").load("aiModel/AILive.html"); 
-			});
-		
-
-			
-			
-			$( "#barcode" ).click(function(){ 
-				 $("#changeableDiv").load("bar/BarcodeControl.html"); 
-			});
-			$( "#execute" ).click(function(){ 
-				 $("#changeableDiv").load("exe/ExecuteExe.html"); 
-			});
-			$( "#Bethesda" ).click(function(){ 
-				 $("#changeableDiv").load("rep/BethesdaReports.html"); 
-			});
-			$( "#Statistical" ).click(function(){ 
-				 $("#changeableDiv").load("rep/StatisticalReports.html"); 
-			});
-	 
-	
-			/* Dash PHC end  */
-			$( "#userMgmt" ).click(function(){ 
-					onchangeClick();
-				 $("#changeableDiv").load("mas/UserManagement.html"); 
-				 
-			});
-			
-			$( "#instConfig" ).click(function(){ 
-				onchangeClick();
-			 $("#changeableDiv").load("mas/InstitutionConfiguration.html"); 
-			 
-		    });
-
-			/* $( "#applisetup" ).click(function(){ 
-				onchangeClick();
-			 $("#changeableDiv").load("mas/ApplicationSetup.html"); 
-			 
-		    }); */
-			$( "#institsetup" ).click(function(){ 
-				onchangeClick();
-			 $("#changeableDiv").load("mas/InstitutionSetup.html"); 
-			 
-		    });
-			
-	
-			$( "#user-profile" ).click(function(){
-			    $("#changeableDiv").load("profile/user-profile.html");
-			
-			});
-	
-
-			$( "#changepwd" ).click(function(){
-				   /*$("#changeableDiv").load("changePwd.html");*/
-				 var util;  
-				 require(['requirejs/domReady'], function (doc) {
-					require(['change_pwd'],function(user,){
-						user.initUI();
-				 	});	
-					require(['change_pwd','jqueryutils'],function(user,ut){util=ut;}); 
-
-				 });
-				});
-			
-			
-			
-			
-			$( "#resetPassword" ).click(function(){
-					onchangeClick();
-			        $("#changeableDiv").load("mas/ResetPassword.html");
-			
-			});
-	
-			function onchangeClick()
-			{   
-				$('#clinicalDetails').attr('style','display:none');
-				$('#SlideRegistration').attr('style','display:none');
-				$('#patientDetails').attr('style','display:none');
-				$('#caseHistory').attr('style','display:none');
-				$('#clinicalExamination').attr('style','display:none');
-				$('#provisionalDiagnosis').attr('style','display:none');
-				$('#expertOpinion').attr('style','display:none');
-				$('#patientProfile').attr('style','display:none');
-				$('#patientSummary').attr('style','display:none');
-				$('#medicalImages').attr('style','display:none');
-				$('#investigationDone').attr('style','display:none');
-				$('#patientProfileDiv').attr('style','display:none');
-				$('#consultationfeedback').attr('style','display:none');
-				$('#followUp').attr('style','display:none');
-				$('#referraldetails').attr('style','display:none');
-				$('#Reporting').attr('style','display:none');
-				$('#aimodelmanagement').attr('style','display:none');
-				$('#barcode').attr('style','display:none');
-				$('#execute').attr('style','display:none');
-			}
-			/*dashboard end*/
-
-		</script>
-		
-		 -->
-		<!-- end -->
-
-		
 	</div>
- <!-- <script src="../../scripts/js/app.js"></script> -->
- 	<script type="text/javascript" src="scripts/js/promise.js"></script>
+	<!-- <script src="../../scripts/js/app.js"></script> -->
+	<script type="text/javascript" src="scripts/js/promise.js"></script>
 	<script type="text/javascript" src="scripts/js/fetch.js"></script>
 	<script type="text/javascript" src="scripts/js/app.js"></script>
-		<script>
+	<script>
 		function LoginFn() {
 			document.location.href="FSLogin.html"; 
 		}
-	</script>
-</body>
+		
+		//Search Bar Code
+        const searchFun = () => {
+            //catching the textbox value
+            let filter = document.getElementById('myInput').value.toUpperCase();
+            //catching the names of the person
+            let myTable = document.getElementById('display_person');
+            let tr = myTable.getElementsByTagName('tr');
 
+            for(var i = 0; i < tr.length; i++) {
+                let td = tr[i].getElementsByTagName('td')[0];
+
+                if(td) {
+                    let textValue = td.textContent || td.innerHTML;
+
+                    if(textValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";       //if matched, show the whole string
+                    } else {
+                        tr[i].style.display = "none";   //if not matched, show nothing
+                    }
+                }
+            }
+        }
+
+
+		</script>
+	<script type="text/javascript" src="scripts/js/mainpage.js"></script>
+	<script>
+		
+        //fetching data and organize in table format
+        function start() { 
+        	
+        	buildTable();
+        	//rowClicked();
+        }
+        function buildTable(){
+        	
+            let perlist = document.querySelector('.body');
+            
+            var db;
+            var request = indexedDB.open("DigiPathoFSDB", 10); 
+            
+            console.log(request);
+            
+            request.onsuccess = function (evt) {
+                console.log("under this success");
+                db = request.result; 
+                var transaction = db.transaction("fs_person_registration_sync", 'readonly');
+                var objectStore = transaction.objectStore("fs_person_registration_sync");
+                var requesttrans = objectStore.getAll();
+              
+                requesttrans.onsuccess = function(eventt) {
+                    console.log("getall");
+                    let re = eventt.target;
+                    console.log("request",{ re });
+                   
+                    perlist.innerHTML = re.result.map((person) => {
+                            
+                     return $("#tbl_body").append(`
+                            <tr >
+                                <td style="display:none;">${person.fs_person_id}</td> 
+                                <td onclick="rowClicked()"><a href="#">${person.person_name}</td>                                
+                                <td>${person.age}</td>
+                                <td>${person.gender}</td>     
+                                <td>${person.mobile_no}</td>
+                                <td>${person.district_id}</td>
+                            </tr>
+                            `);	 
+                                     
+                            
+                    });
+                    
+                   
+
+
+                }
+                
+                $(".tablemanager").tablemanager({
+                    firstSort: [
+                        [3, 0],
+                        [2, 0],
+                        [1, "asc"],
+                    ],
+                    disable: ["last"],
+                    appendFilterby: true,
+                    debug: true,
+                    vocabulary: {
+                        voc_filter_by: "Search By",
+                        voc_type_here_filter: "Search by Name / ID",
+                        voc_show_rows: "Rows Per Page",
+                    },
+                    pagination: true,
+                    showrows: [5, 10, 20, 50],
+                });
+
+                requesttrans.onerror = function(eventt) {
+                    console.log("error in getall");
+                    console.warn(err);
+                };
+
+        }
+          
+          
+            request.onerror = (err) => {
+                    console.log("under this error");
+                    console.warn(err);
+                };
+
+                
+        }
+		
+		</script>
+	<script type="text/javascript">
+   
+    //by clicking a particular row, some value of that row should be stored into the localstorage. 
+   
+     
+
+   function rowClicked(){
+	    	
+    	console.log("innnnssiddddeeee");
+        var table = document.getElementById('display_person');
+        console.log(table);
+       
+        var no_of_columns = document.getElementById("display_person").rows[0].cells.length;
+        console.log("no_of_columns", no_of_columns);
+        var c = $('#display_person tbody tr').length;
+      
+
+        var no_of_rows = document.getElementById("display_person").rows.length;
+        
+         let orderSummaryTable = document.getElementById('display_person').tBodies[0];
+        let lastRowIndex = orderSummaryTable.rows.length;
+
+        let tableEl = document.querySelector("table");
+     ;
+        console.log("no_of_rows: ", orderSummaryTable.rows.length);
+        
+        for(var i = 0; i <= lastRowIndex; i++)
+       {
+
+        	tableEl.rows[i].onclick = function()
+            {
+                 const id = this.cells[0].innerHTML;
+                 const name = this.cells[1].innerText;     //innerHTML would give o/p like: <a href="Menu.html">Jeni George</a>
+                 const age = this.cells[2].innerHTML;
+                 const gender = this.cells[3].innerHTML;
+
+                 console.log(id);
+                 console.log(name);
+                 console.log(age);
+                 console.log(gender);
+
+                 window.localStorage.setItem('local-id', id);
+                 window.localStorage.setItem('local-name', name);
+                 window.localStorage.setItem('local-age', age);
+                 window.localStorage.setItem('local-gender', gender);
+
+                 window.location.href = "Menu.html";
+                 
+                 
+             
+            };
+        }
+    }
+
+    </script>
+</body>
 
 </html>

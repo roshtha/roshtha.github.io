@@ -1,9 +1,16 @@
+//SERVICE WORKER IS A BIG EVENT LISTENER FILE
+
 console.log('service worker inside sw.js');  //checking sw.js installed or not
+
+
+//importScripts('scripts/js/idb.js');
+//importScripts('scripts/js/idb-fn.js');
+//importScripts('scripts/js/idb-init.js');
 
 
 //install service worker
 self.addEventListener('install', evt => {
-    console.log('service worker has been INSTALLED.', evt);
+    console.log('[SW] service worker INSTALLED.', evt);
     evt.waitUntil (
 		caches.open('static')
 			.then(function(cache) {
@@ -11,6 +18,8 @@ self.addEventListener('install', evt => {
 				cache.addAll([
 					'/',
 					'FSLogin.html', 
+					'scripts/js/authentication.js',
+					'scripts/js/validation.js',
 					'scripts/js/app.js',
 					'scripts/assets/css/Login.css',
 					'MainPage.html',
@@ -44,7 +53,16 @@ self.addEventListener('install', evt => {
 					'scripts/assets/css/Others.css',
 					'scripts/js/othersapp.js',
 					'Overview.html',
-					'scripts/assets/css/Overview.css'
+					'scripts/assets/css/Overview.css',
+					'scripts/js/gone-offline.js',
+					'scripts/js/promise.js',
+					'scripts/js/fetch.js',
+					'scripts/js/uid.js',
+					'scripts/js/idb.js',
+					'scripts/js/idb-fn.js',
+					'scripts/js/idb-init.js',
+					'scripts/dexie/dexie.js',
+					'scripts/dexie/dexie.min.js'
 				]);
 				/*  cache.add('/');                       // By default it takes this path - /
 				cache.add('FSLogin.html');			// By default it takes this path, we don't need to write /DigiPathoFS/-  /DigiPathoFS/FSLogin.html
@@ -55,12 +73,12 @@ self.addEventListener('install', evt => {
 
 //activate service worker
 self.addEventListener('activate', evt => {
-    console.log('service worker has been ACTIVATED.', evt);
+    console.log('++++ service worker ACTIVATED ++++.', evt);
     });
 
 //fetch event
 self.addEventListener('fetch', evt => {
-    console.log('service worker FETCHING something', evt);
+    console.log('....service worker FETCHING something....', evt);
     evt.respondWith(
 		caches.match(evt.request)
 			.then(function(response) {
@@ -74,6 +92,111 @@ self.addEventListener('fetch', evt => {
 			})
 		);
     });
+    
+
+//+++++ BACKGROUND SYNC +++++
+// This is for BackgroundSync where we store form data from PERSON REGISTRAION page, for example,
+// that is then sent when back online.
+// If we are online then this will run immediately.
+
+
+
+var name;
+var reply;
+
+
+//importScripts('scripts/js/idb-init.js');
+    
+//Now service worker listen the SEND event just like it intercepts fetch event, it will also intercept sync event (when browser comes back online)
+self.addEventListener("sync", function (event) {
+	
+	//it looks for any custom event named fs_person_registration_sync_tag being queued
+	if (event.tag == "fs_person_registration_sync_tag") { // listen for the person-registration(field-survey) form custom event - there may be others
+		console.log("===== in serviceWorker =====");
+		console.log(event);
+		console.log("fs_person_registration_sync_tag (THE SYNC TAG) heard");
+		console.log("Sending form data...");
+		/*event.waitUntil(
+		    readAllData('fs_person_registration_sync')
+		    .then()
+		    .catch()
+		    )		*/
+		    
+		// get data
+		// send data
+		// get response from posting
+		// handle response
+		// send message and notification
+		// delete data from FORM-DATA table 
+		
+			/*getData('fs_person_registration_sync', 'fs_person_id').then(function (val) {
+			console.log('val is ', val);
+			name = val.name;
+			category = val.category;
+			subject = val.subject;
+			message = val.message;
+			reply = name + ':' + category + ':' + subject + ':' + message;
+			console.log('POSTED DATA WILL BE: ', reply);
+			});*/
+	}
+	
+
+	
+	
+	
+	//it looks for any custom event named fs_cancer_screening_sync_tag being queued
+/*	if (event.tag == "fs_cancer_screening_sync_tag") { // listen for the cancer_screening form custom event - there may be others
+		console.log("===== in serviceWorker =====");
+		console.log(event);
+		console.log("fs_cancer_screening_sync_tag (THE SYNC TAG) heard");
+		console.log("Sending form data...");
+	}
+	
+	
+	//it looks for any custom event named fs_oral_cancer_screening_sync_tag being queued
+	if (event.tag == "fs_oral_cancer_screening_sync_tag") { // listen for the oral_cancer_screening form custom event - there may be others
+		console.log("===== in serviceWorker =====");
+		console.log(event);
+		console.log("fs_oral_cancer_screening_sync_tag (THE SYNC TAG) heard");
+		console.log("Sending form data...");
+	}
+	
+	
+	//it looks for any custom event named fs_breast_cancer_screening_sync_tag being queued
+	if (event.tag == "fs_cervical_cancer_screening_sync_tag") { // listen for the cervical_cancer_screening form custom event - there may be others
+		console.log("===== in serviceWorker =====");
+		console.log(event);
+		console.log("fs_cervical_cancer_screening_sync_tag (THE SYNC TAG) heard");
+		console.log("Sending form data...");
+	}
+	
+	
+	//it looks for any custom event named fs_breast_cancer_screening_sync_tag being queued
+	if (event.tag == "fs_breast_cancer_screening_sync_tag") { // listen for the breast_cancer_screening form custom event - there may be others
+		console.log("===== in serviceWorker =====");
+		console.log(event);
+		console.log("fs_breast_cancer_screening_sync_tag (THE SYNC TAG) heard");
+		console.log("Sending form data...");
+	}
+	
+	
+	//it looks for any custom event named fs_common_cancer_screening_sync_tag being queued
+	if (event.tag == "fs_common_cancer_screening_sync_tag") { // listen for the common cancer screening form custom event - there may be others
+		console.log("===== in serviceWorker =====");
+		console.log(event);
+		console.log("fs_common_cancer_screening_sync_tag (THE SYNC TAG) heard");
+		console.log("Sending form data...");
+	}*/				
+});    
+
+
+/*function getData(table, id) {
+	return dbPromise.then(function (db) {
+		var tx = db.transaction(table, "readonly");
+		var dbTable = tx.objectStore(table);
+		return dbTable.get(id);
+	});
+}*/
     
 //comment today
 /* ---- const cacheName = "app-shell-rsrs-v2";
@@ -191,3 +314,4 @@ addEventListener('fetch', function(event) {
 
 */
 
+//importScripts('scripts/js/idb-init.js');

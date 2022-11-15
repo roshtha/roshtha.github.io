@@ -6,6 +6,9 @@
 	<title>Cervical Cancer Screening Survey Form</title>
 	<link rel="stylesheet" type="text/css" href="scripts/assets/css/Cervical.css">
 	<link rel="manifest" href="manifest.json">
+	<script src="scripts/dexie/dexie.min.js"></script>
+	<script src="scripts/dexie/dexie.js"></script>	
+	<script src="scripts/js/gone-offline.js"></script>	
 	<!--iOS support-->
 	<link rel="apple-touch-icon" href="icons/icon-96.png">
 	<meta name="apple-mobile-web-app-status-bar" content="#00695c">
@@ -24,6 +27,7 @@
 			<p style="float: right;"><a href="Menu.html">Menu</a></p> 
 		</div>
 	
+			<div id="status"></div>
 			<div class="form">
 			<form name="patientForm">		
 			<div class="input-field">
@@ -100,11 +104,13 @@
 
 			<div class="btn-field">
 				<input type="button" class="btn" id="prevbutton" onclick="OralFn()" value="<<">
-				<input type="submit" style='margin-right:16px' class="btn" value="SUBMIT">
+				<!-- <input type="submit" style='margin-right:16px' class="btn" value="SUBMIT">  -->
+				<button id="submit" class="btn">SAVE</button>
 				<input type="button" class="btn" value="CLEAR">
 				<input type="button" class="btn" id="nextbutton" onclick="BreastFn()" value=">>">
 			</div>	
-			</form>			
+			</form>	
+			<div id="output" style="margin-top:20px;"></div>		
 		</div>
 		
 	</div>
@@ -117,10 +123,191 @@
 			document.location.href="Breast.html"; /*Page name or Path*/ 
 		}
 	</script>	
-		<!-- <script src="scripts/js/app.js"></script>  -->
+
+	
+			<script>
+			
+			//OLD CODE STARTS ----------------------------------------
+			
+			/*var db = new Dexie("DigiPathoFSDB");
+			
+			db.version(1).stores({
+				fs_cervical_cancer_screening: "++fs_person_id, fs_cancer_id, is_bleeding, discharge_smell, discharge_time, are_corpses, bleeding_time, low_weight, user_id, created_date, is_valid"
+			});
+			
+			//Log DB details -- opens an existing database as is
+			db.open(); 
+			*/
+			
+			/*var db = new Dexie("DigiPathoFSDB")
+			  .open()
+			  .then(function (db) {
+			    console.log("Found database: " + db.name);
+			    console.log("Database version: " + db.verno);
+			    db.tables.forEach(function (table) {
+			      console.log("Found table: " + table.name);
+			      console.log("Table Schema: " + JSON.stringify(table.schema, null, 4));
+			    });
+			  })
+			  .catch("NoSuchDatabaseError", function (e) {
+			    // Database with that name did not exist
+			    console.error("Database not found");
+			  })
+			  .catch(function (e) {
+			    console.error("Oh uh: " + e);
+			  });
+			
+			function add_new(bleeding1, discharge1, discharge2, mens1, bleeding2, weight){
+			    // Interact With Database
+			    db.transaction('rw', db.fs_cervical_cancer_screening, function () {
+			        // Let's add some data to db:
+			        insert_object = {
+			        					is_bleeding:bleeding1, discharge_smell:discharge1, discharge_time:discharge2, are_corpses:mens1, bleeding_time:bleeding2, low_weight:weight 			        												
+									};
+			        db.fs_cervical_cancer_screening.add(insert_object);
+			    }).catch(function(err) {
+			        console.error(err.stack || err);
+			        console.log("ERROR");
+			    });    
+			}*/
+
+
+
+			//add_new("susheel singh","susheel61@gmail.com");//default content
+			//add_new("susheel singh","1987-09-28","35","Female","Married","944778932","SH2, Sulthan Bathery","4565545654","WARD2","PANCH5","DIST14","STA28","IND","689542","Doctor1","2022-09-27",true);//default content
+			/*document.querySelector("button").addEventListener("click",function(e){
+				//document.getElementById('submit').addEventListener('click', function (event) {
+					//preventing default submission of the form
+					//event.preventDefault();
+					//console.log("Default event prevented!!!!");
+					//console.log("button clicked");
+			    add_new(
+			    		/*document.getElementById('bleeding1').checked,
+			    		document.getElementById('discharge1').checked,
+			    		document.getElementById('discharge2').checked,
+			    		document.getElementById('mens1').checked,
+			    		document.getElementById('bleeding2').checked,
+			    		document.getElementById('weight').checked
+			    		Number(document.getElementById('bleeding1').checked),
+			    		Number(document.getElementById('discharge1').checked),
+			    		Number(document.getElementById('discharge2').checked),
+			    		Number(document.getElementById('mens1').checked),
+			    		Number(document.getElementById('bleeding2').checked),
+			    		Number(document.getElementById('weight').checked)
+					);
+			});*/
+			
+			//OLD CODE ENDS ----------------------------------------
+			
+					console.log("inside oral survey html script tag, for idb working");
+		  
+		//opening already created IDB
+		var db = new Dexie("DigiPathoFSDB")
+		  .open()
+		  .then(function (db) {
+		    console.log("Found database: " + db.name);
+		    console.log("Database version: " + db.verno);
+		    db.tables.forEach(function (table) {
+		      console.log("Found table: " + table.name);
+		      console.log("Table Schema: " + JSON.stringify(table.schema, null, 4));
+		    });
+		  })
+		  .catch("NoSuchDatabaseError", function (e) {
+		    // Database with that name did not exist
+		    console.error("Database not found");
+		  })
+		  .catch(function (e) {
+		    console.error("Oh uh: " + e);
+		  });
+		
+		
+			
+			// form send event listener
+			document.getElementById('submit').addEventListener('click', function (event) {
+				//preventing default submission of the form
+				event.preventDefault();
+				console.log("Default event prevented!!!!");
+				
+			
+				function add_new(bleeding1, discharge1, discharge2, mens1, bleeding2, weight){
+				    // Interact With Database, fs_cervical_cancer_screening is one of the field names of IDB
+				    db.transaction('rw', db.fs_cervical_cancer_screening_sync, function () {
+				        // Let's add some data to db:
+				        insert_object = {
+				        					is_bleeding:bleeding1, discharge_smell:discharge1, discharge_time:discharge2, 
+				        					are_corpses:mens1, bleeding_time:bleeding2, low_weight:weight 			        												
+										};
+				        db.fs_cervical_cancer_screening_sync.add(insert_object);
+				    }).catch(function(err) {
+				        console.error(err.stack || err);
+				        console.log("ERROR OCCURRED when calling the form values and mappping with IDB fields");
+				    });    
+				}
+			    
+
+			//Background Sync code 
+			
+			//if the browser supports both serviceWorker and SyncManager, then carry on the further steps
+			if ('serviceWorker' in navigator && 'SyncManager' in window) {
+	                                    console.log("SYNC MANAGER AVAILABLE");
+	                                  
+	                                    // serviceWorker registered at top of page       
+	                                    navigator.serviceWorker.ready.then(function (swRegistration) {
+	                                        console.log("register sync fs_cervical_cancer_screening_sync_tag");
+	                                        // REGISTER SYNC EVENT called fs_cervical_cancer_screening_sync_tag(our own custom name which should be unique to this particular background sync)
+	                                        swRegistration.sync.register('fs_cervical_cancer_screening_sync_tag');
+
+	                                        console.log("Saving to idb")
+	                                        //writing data into IDB, function of idb-fn.js
+	                                        //writeData("fs_person_reg", personData);	//fs_person_reg is table i.e store name
+	                                        
+	                                        //getting all the fields
+										    add_new(										    	
+										    		Number(document.getElementById('bleeding1').checked),
+										    		Number(document.getElementById('discharge1').checked),
+										    		Number(document.getElementById('discharge2').checked),
+										    		Number(document.getElementById('mens1').checked),
+										    		Number(document.getElementById('bleeding2').checked),
+										    		Number(document.getElementById('weight').checked)
+													);
+											
+	                                        console.log("Cervical Data stored in idb...");
+	                                        // if online it will be sent immediately by sync event and    
+	                                        //if not online, display some proper message in the div id named 'output' 
+	                                        if (!navigator.onLine) {
+	                                            const output = document.getElementById('output');
+	                                            output.innerHTML =
+	                                                "FORM DATA SAVED AND WILL BE SENT LATER WHEN BACK ONLINE";
+	                                            output.style.border = '2px solid red';
+	                                            output.style.color = 'blue';
+	                                            console.log("OFFLINE - so, if block worked");
+	                                        } else {		//otherwise, if online, automatically synced 
+	                                            // TO DO
+	                                            // post form as we are online
+	                                            const output = document.getElementById('output');
+	                                            output.innerHTML =
+	                                                "FORM DATA SENT";
+	                                           output.style.border = '2px solid avocado';
+	                                           output.style.color = 'green';
+	                                           console.log("ONLINE - So, else block worked, data directly sent.");
+	                                        }
+	                                    });
+	                                } else {
+	                                	//if the browser does not support both serviceWorker and SyncManager, then post the form in a regular way
+	                                    console.log("Browser does not support serviceWorker and SyncManager");
+	                                	alert("does not support offline capability!!!!");
+	                                }	
+				
+
+			});
+	</script>
+	
+			<!-- <script src="scripts/js/app.js"></script>  -->
  	<script type="text/javascript" src="scripts/js/promise.js"></script>
 	<script type="text/javascript" src="scripts/js/fetch.js"></script>
 	<script type="text/javascript" src="scripts/js/app.js"></script>
 	<script src="scripts/js/cerviapp.js"></script>
+	<script src="scripts/js/idb-init.js"></script>
+	
 </body>
 </html>

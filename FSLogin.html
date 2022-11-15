@@ -22,39 +22,48 @@
 		<link rel="stylesheet" type="text/css" href="scripts/assets/css/Login.css">
 	    <!-- <link rel="icons" type="image/png" sizes="144x144"  href="/favicon/android-icon-144x144.png"> -->
 	   	<!-- <script src="scripts/dctc/lo/TelemedLogin.js"></script> -->
-	   	<!-- <script src="scripts/js/app.js"></script>-->
+	   	<script src="scripts/js/app.js"></script>        	 <!-- registration of service worker -->
+		<script src="scripts/dexie/dexie.min.js"></script>
+		<script src="scripts/dexie/dexie.js"></script>
+		<!--	<script src="scripts/js/idb.js"></script>  -->
+	<!-- <script src="scripts/js/idb-fn.js"></script>  -->
+		<script src="scripts/js/idb-init.js"></script>
 	   	<!-- code added by Subhadip -->
-	   	<link rel="manifest" href="manifest.json">
+	   	<link rel="manifest" href="manifest.json">        <!-- for PWA compatible -->
 		  <!--iOS support-->
 		  <link rel="apple-touch-icon" href="icons/icon-96.png">
 		  <meta name="apple-mobile-web-app-status-bar" content="#00695c">
 		  <meta name="theme-color" content="#00695c">
-		  <script src="scripts/axios/dist/axios.min.js"></script>
-		  <script src="scripts/dexie/dexie.min.js"></script>
 		  <!--iOS support-->
 		  <!-- code added by Subhadip -->
-			
+		<title>DigiPatho - Field Survey App Login</title>
+		<!-- <script type="module" src="scripts/js/idb.js"></script> -->
 </head>
 
 <body>
 	<div class="center">
 		<h1>DigiPathoFS Login</h1>
-
-		<div class="form">
-			<input id="loginUser" type="email" name="" class="textfield" placeholder="Username">
-
-			<input id="loginPassword" type="password" name="" autocomplete="off" class="textfield" placeholder="Password">
-
-			<div class="forgetpass"><a href="#" class="link" onclick="message()">Forget Password?</a>
+		
+		<form class="form-center" name="form" onsubmit="return validated()">
+			<div class="login_form">
+				<!-- <input id="loginUser" type="email" name="" class="textfield" placeholder="Username">  -->
+				<input autocomplete="off" type="text" name="username" id="username" class="textfield" placeholder="Username">
+				<div id="username_error">Please fill up your Username</div>
+				
+				<!-- <input id="loginPassword" type="password" name="" autocomplete="off" class="textfield" placeholder="Password">  -->
+				<input type="password" name="password" class="textfield" id="password" placeholder="Password">
+				<div id="pass_error">Please fill up your Password</div>
+					
+				<div class="forgetpass"><a href="#" class="link" onclick="message()">Forget Password?</a>
+				</div>
+	
+				<!--  <input type="submit" name="" class="btn" value="Login" onclick="login();"> -->
+				
+				<!-- <button type="button" class="btn" id ="loginBtnID" onclick="login();">Login</button>  --> 
+				<button type="button" class="btn" id ="loginBtnID" onclick="MainPageFn();">Login</button> 
+				<!--<input type="submit" name="" class="btn" id ="loginBtnID" onclick="authen();" value="Login">-->
 			</div>
-
-			<!--  <input type="submit" name="" class="btn" value="Login" onclick="login();"> -->
-			
-			<!-- <button type="button" class="btn" id ="loginBtnID" onclick="login();">Login</button>  --> 
-			<!--<button type="button" class="btn" id ="loginBtnID" onclick="MainPageFn();">Login</button>-->
-			
-			<button type="button" class="btn" id ="loginBtnID" >Login</button>
-		</div>
+		</form>
 	</div>
 
 
@@ -346,198 +355,32 @@
 		{
 			alert("Try to remember password :)");
 		}
-		
-		
-		  
-		
-		//fs_person_registration to include fields like sync_status (true/false), global_fs_person_id (primary key from global server, after data sync)
-		window.onload = function () {
-		
-			// Declare db instance
-			var db = new Dexie("DigiPathoFSDB");
-			
-			
-	
-			
-			// Define Database Schema
-			db.version(1).stores({
-			  fs_users: "global_user_id, user_id, login_id, login_password", 
-			  //other fields for data insert - title, first_name, middle_name, last_name, sex, email, mobile_no, //similar to structure of mas_users
-			  fs_person_registration: "++fs_person_id, global_fs_person_id, fs_inst_id, person_name ",
-			  //fs_cancer_screening: "++id, title, date, *items",
-			  //fs_common_cancer_screening:,
-			  //fs_oral_cancer_screening:,
-			  //fs_breast_cancer_screening:,
-			  //fs_cervical_cancer_screening:,
-			  
-			  friends: "++id, name, age, isCloseFriend",
-			  notes: "++id, title, date, *items"
-			  
-			  
-			});
-		
-			db.open().catch (function (err) {
-	    		console.error('Failed to open db: ' + (err.stack || err));
-			});
-			
-			
-			//Log DB details -- opens an existing database as is
-			
-			new Dexie("DigiPathoFSDB")
-			  .open()
-			  .then(function (db) {
-			    console.log("Found database: " + db.name);
-			    console.log("Database version: " + db.verno);
-			    db.tables.forEach(function (table) {
-			      console.log("Found table: " + table.name);
-			      console.log("Table Schema: " + JSON.stringify(table.schema, null, 4));
-			    });
-			  })
-			  .catch("NoSuchDatabaseError", function (e) {
-			    // Database with that name did not exist
-			    console.error("Database not found");
-			  })
-			  .catch(function (e) {
-			    console.error("Oh uh: " + e);
-			  });
-		  
-		
-			loginBtnID.addEventListener("click", function(){
-				alert('login button clicked');
-				
-				var Global_id = 'http://117.221.20.184:8080/DigiPathoGlo';
-	
-				var params = {};
-				
-				params["hospital_id"] = 'HS55';
-				params["role_id"] = 'RL221';
-				params["application_id"] = 'CF221';
-				
-	
-	
-				var pdata = {};
-				pdata['data']= JSON.stringify(params);
-				console.log('remote url:' + Global_id+'/Rest/usermanagementservice/readuserlist_global');
-				axios
-			       // .post(Global_id+'/Rest/usermanagementservice/readuserlist_global',pdata, )
-			        
-			        .get('https://jsonplaceholder.typicode.com/todos?_limit=5')
-			        
-			        .then((response) => {
-			        	console.log(JSON.stringify(response));
-			            const dbOpenRequest = indexedDB.open('DigiPathoFSDB', 2);
-			            
-			            dbOpenRequest.onupgradeneeded = function (event) {
-			                const db = event.target.result;
-			                db.createObjectStore('userStore', { keyPath: 'id' });
-			            };
-			            
-			            dbOpenRequest.onsuccess = function (event) {
-			                const db = event.target.result;
-			                const txn = db.transaction('userStore', 'readwrite');
-			                const store = txn.objectStore('userStore');
-			                const clearRequest = store.clear();
-			                clearRequest.onsuccess = function () {
-			                    response.data.forEach((usr) => {
-			                        store.add(usr);
-			                    });
-			                };
-			            };
-			            //setHospitals(response.data);
-			        })
-				
-    	
-    	
-    	
-    	
-  
-  
-  		//Hard code some user details. the data store sturcture similar to mas_users tabel
-		
-		//other fields for data insert - title, first_name, middle_name, last_name, sex, email, mobile_no, //similar to structure of mas_users
-		db.transaction("rw", db.fs_users,  function* () {
-		  // Let's add some data to db:
-		  var userdata = yield db.fs_users.add({
-		    global_user_id: "GUSR222",
-		    user_id: "USR2126",
-		    login_id: "admin",
-		    login_password: "admin",
-		    title:"Mr.",
-		    first_name: "Admin"
-		    ///
-		  });
-		 }).catch(function (err) {
-		  // Catch any error event or exception and log it:
-		  console.error(err.stack || err);
-		}); 
-		
-		
-		//authenticate user against hardcoded values and user entered parameters.
-		  
-		
-		// Interact With Database
-		db.transaction("rw", db.friends, db.notes, function* () {
-		  // Let's add some data to db:
-		  var friend1Id = yield db.friends.add({
-		    name: "Camilla",
-		    age: 25,
-		    isCloseFriend: 1,
-		  });
-		  var friend2Id = yield db.friends.add({
-		    name: "Ban Ki-moon",
-		    age: 70,
-		    isCloseFriend: 0,
-		  });
-		
-		  var noteId = yield db.notes.add({
-		    title: "Shop tomorrow",
-		    date: new Date(),
-		    items: ["milk", "butter"],
-		  });
-		
-		  // Let's query the db
-		  var closeFriends = yield db.friends
-		    .where("isCloseFriend")
-		    .equals(1)
-		    .toArray();
-		
-		  console.log("Close friends:" + closeFriends.map((f) => f.name));
-		
-		  var toShop = yield db.notes
-		    .where("title")
-		    .startsWithIgnoreCase("shop")
-		    .toArray();
-		
-		  console.log("Shopping list: " + toShop.map((note) => note.items));
-		}).catch(function (err) {
-		  // Catch any error event or exception and log it:
-		  console.error(err.stack || err);
-		});
-  
-  
-    	
-				
-				
-	  			document.location.href="MainPage.html"; 
-			});
-		
-		}
-		
+	</script>
+	<script>
+	function MainPageFn() {
+	document.location.href="MainPage.html"; 
+}
+
+//**********
+
+// window.onload = function () {
+	// Declare db instance
+//WRITE HERE
+
+/////////////////////////////////////////////////////////////////////////////////////// 
+//write here
+///////////////////////////////////////////////////////////////////////////////////////
+
+//}
 	</script>
 	
-	
 
-	
-	
 	<script type="text/javascript" src="scripts/js/promise.js"></script>
 	<script type="text/javascript" src="scripts/js/fetch.js"></script>
-	<script type="text/javascript" src="scripts/js/app.js"></script>
-	<!-- <script type="text/javascript" src="scripts/js/fsapp_remote.js"></script>-->
-	
+	<script type="text/javascript" src="scripts/js/app.js"></script>         <!-- registration of service worker -->
+	<script type="text/javascript" src="scripts/js/validation.js"></script>
+	<script type="text/javascript" src="scripts/js/authentication.js"></script>
+
 </body>
-
-
-	
-	
 </html>
  

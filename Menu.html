@@ -14,14 +14,33 @@
 	<!--iOS support-->			
 </head>
 
-
-
+    <style>
+	      .spanstyle {
+	      	color: blue;
+	      	font-weight: bold;
+	   }
+    </style>
 
 <body>
 	<div class="container">
 
 		<p style="float: right;"><a href="MainPage.html">Home</a></p> 
-		<h3> Jeni, 23, Female</h3>
+		<!-- <h3> Jeni, 23, Female</h3>  -->
+		
+		
+		   <h3>Menu</h3>
+		   <br>
+		    <!-- <div>
+		        ID: <span id="local-id"></span>
+		    </div>  -->
+		    
+		    <div>
+		        NAME: <span class="spanstyle" id="local-name"></span>
+		        
+		        AGE: <span class="spanstyle" id="local-age"></span>
+
+		        GENDER: <span class="spanstyle" id="local-gender"></span>
+		    </div>
 		
 		
 		<br> <br>
@@ -34,6 +53,18 @@
 	</div>
 	
 	<script>
+	
+	//getting data from local storage 
+	//window.onload
+		    //const l_id = localStorage.getItem('local-id');
+		    const l_name = localStorage.getItem('local-name');
+		    const l_age = localStorage.getItem('local-age');
+		    const l_gender = localStorage.getItem('local-gender');
+		
+		    //document.getElementById('local-id').textContent = l_id;
+		    document.getElementById('local-name').textContent = l_name;
+		    document.getElementById('local-age').textContent = l_age;
+		    document.getElementById('local-gender').textContent = l_gender;
 	
 		function myonClickFn() {
 			document.location.href="FieldSurvey.html"; /*Page name or Path*/ 
