@@ -1,5 +1,5 @@
 // import { uid } from './uid.js';
-// console.log(uid());
+ //console.log(uid());
 //nothing else to import because we are using the built in methods
 //https://developer.mozilla.org/en-US/docs/Web/API/IDBDatabase
 
@@ -43,7 +43,7 @@
   });
 })();*/
 
-import { uid } from './uid.js';
+/*import { uid } from './uid.js';
 console.log(uid());
 //nothing else to import because we are using the built in methods
 //https://developer.mozilla.org/en-US/docs/Web/API/IDBDatabase
@@ -123,4 +123,4 @@ const IDB = (function init() {
     };
     return tx;
   }
-})();
+})();*/

@@ -20,7 +20,7 @@ body {
 	border-bottom: 1px solid silver;
 }
 
-.form {
+.login_form {
 	padding-bottom: 15px;
 	margin: 0 20px;
 	text-align: center;
@@ -64,9 +64,26 @@ body {
 	color: blueviolet;
 }
 
+.login_form #username_error,
+.login_form #pass_error {
+	margin-top: 5px;
+	width: auto;
+	font-size: 18px;
+	color: #C62828;
+	background: rgba(255,0,0,0.1);
+	text-align: center;
+	padding: 5px 8px;
+	border-radius: 3px;
+	border: 1px solid #EF9A9A;
+	display: none;
+}
+
 @media (max-width: 470px)
 {
 	.center {
 		width: 88%;
 	}
+	.form-center {
+		width: auto;	
+	}	
 }

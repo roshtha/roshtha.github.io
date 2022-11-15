@@ -166,13 +166,16 @@ body {
 }
 
 button {
+cursor: pointer;
+padding: 3px;
+ margin-right: 2px;
+}
+
+.add_new {
 	outline: none;
 	border: none;
 	border-radius: 6px;
 	cursor: pointer;
-}
-
-.add_new {
 	padding: 10px 20px;
 	color: #ffffff;
 	background-color: #0298cf;
@@ -229,6 +232,9 @@ tr:hover td {
     color: #44b478;
     cursor: pointer;
     background-color: #ffffff;
+   /*background-color: orangered;
+   color: white;
+   cursor: pointer;*/
 }
 
 td button {
@@ -244,8 +250,48 @@ a {
 	color: black;
 }
 
+footer {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	flex-flow: row wrap;
+	
+	color: #fff;
+	backgrounf-color: #c0c0c0;
+}
+
+.footer > * {
+	flex: none;
+}
+
+/* creates unnecessary space in footer
+.footer-left { 
+	margin-right: 1.25em;
+	margin-bottom: 2em;
+}
+*/
+
+.footer-bottom { 
+	text-align: center;
+	color: #999;
+	padding-top: 10px;
+}
+
+.footer-left p {
+	padding-right: 20%;
+	color: #000000;
+}
+
+.footer-left img {
+	width: 50;
+	height: 50;
+}
+
 ::-webkit-scrollbar {
     width: 6px;
+    display: none;
 }
 
 ::-webkit-scrollbar-track {
@@ -318,5 +364,11 @@ a {
 	button {
 		margin-left: 20px;
 	}	
+	
+	.footer{
+		padding: 15 px;
+		height: 5px;
+	}
+	
 	
 }

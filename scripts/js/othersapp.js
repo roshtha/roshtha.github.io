@@ -43,7 +43,7 @@
   });
 })();*/
 
-import { uid } from './uid.js';
+/*import { uid } from './uid.js';
 console.log(uid());
 //nothing else to import because we are using the built in methods
 //https://developer.mozilla.org/en-US/docs/Web/API/IDBDatabase
@@ -89,8 +89,8 @@ const IDB = (function init() {
 	let other5 = document.getElementById('other5').checked;
 	let other6 = document.getElementById('other6').checked;
 	let other7 = document.getElementById('other7').checked;
-  let other8 = document.getElementById('other8').checked;
-  let other9 = document.getElementById('other9').checked;
+  	let other8 = document.getElementById('other8').checked;
+  	let other9 = document.getElementById('other9').checked;
 	
     let patient = {
       id: uid(),
@@ -129,4 +129,4 @@ const IDB = (function init() {
     };
     return tx;
   }
-})();
+})();*/
