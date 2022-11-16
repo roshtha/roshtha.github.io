@@ -137,13 +137,36 @@
 <!-- the + button got misplaced -->
 <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
 <!-- trial 2 by Subhadip-->
-<script type="text/javascript">
+		<!-- <script type="text/javascript">
             function refreshPage() {
                 if (confirm("Are you sure, want to refresh?")) {
                     location.reload();
                 }
             }
-        </script>
+        </script>  -->
+        
+        <!--  Footer Portion 
+        <style>
+        	.tip {
+			    background-color: #f5f2f2;
+			    padding: 5px;
+			    border-left:5px solid #FFFFFF;
+			    margin-bottom: 20px;
+			    align-content: center;
+			}
+			.tip p {
+			    display:inline;
+			    margin-left:10px;
+			    align-content: center;
+			    text-align: center;
+			}
+			.tip img {
+			    float:left;
+			    width:32px;
+			    height:32px;
+			    align-content: center;
+			}
+        </style>  -->
 
 </head>
 
@@ -205,7 +228,7 @@
 
 	<div class="tabletop">
 		<div class="table-header">
-			<h3>Person Details</h3>
+			<h3 id="foo" style="cursor: pointer; cursor: hand;">Person Details</h3>
 			<div>
 				<button class="add_new" onClick="myonClickFn()">+ Add New</button>
 			</div>
@@ -243,14 +266,25 @@
 	<!-- Main Page body ends -->
 	<!-- Bodyyyyyyyyyyyyy endssssss -->
 
-	<footer class="footer">
+	 <!-- <footer class="footer">
 		<div class="footer-left">
-			<img src="scripts/assets/images/cdac3.png" alt="">
+			<img src="scripts/assets/images/cdac2.png" alt="">
 		</div>
 		<div class="footer-bottom">
 			<p>Developed by Centre for Development of Advanced Computing,
 				Thiruvananthapuram</p>
-		</div>
+		</div>  -->
+		
+		<div>
+		    <img src="scripts/assets/images/cdac2.png" alt="" style="width:40px;height:40px;display: block;   margin-left: auto;
+  margin-right: auto;">
+		    <p style="text-align: center;">Developed by Centre for Development of Advanced Computing,Thiruvananthapuram.</p>
+		</div>  
+		
+		<!--<div class="tip">
+    <img src="scripts/assets/images/cdac2.png" alt="">
+    <p>Developed by Centre for Development of Advanced Computing,Thiruvananthapuram.</p> -->
+</div>
 	</footer>
 
 	<script>
@@ -459,6 +493,17 @@
             };
         }
     }
+    
+    
+   var el = document.getElementById('foo');
+   el.onclick = refreshPage;
+
+
+   function refreshPage() {
+       //if (confirm("Are you sure, want to refresh?")) {
+           location.reload();
+       //}
+   }
 
     </script>
 </body>

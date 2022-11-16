@@ -185,13 +185,13 @@
 
 				<div class="btn-field">
 					<!-- <input type="submit" style='margin-right:16px' class="btn" id ="submit" value="SAVE"> -->
-					<button id="submit" class="btn">SAVE</button>
-					<!-- <button class="btn" value="CLEAR" id ="clearBtnID">CLEAR</button> -->
+					<button id="submit" class="btn" style='width: 50%;'>SAVE</button>
+					<button class="btn" value="CLEAR" id ="clearBtnID" style='width: 48%;'>CLEAR</button>
 					<!-- <input type="button" class="btn" value="CLEAR" id ="clearBtnID"> -->
 				</div>		
 			</form>	
 			      <section>
-        <h3>List</h3>
+        <!--<h3>List</h3>-->
         <ul class="wList">
           <!-- build list here -->
         </ul>
@@ -540,7 +540,14 @@
 		    };
 		    return tx; 
 		  }*/
-	  
+		  
+		  //Clear button working
+		  let btnClear = document.getElementById('clearBtnID');
+		  let inputs = document.querySelectorAll('input');
+
+		  btnClear.addEventListener('click', () => {
+		      inputs.forEach(input =>  input.value = '');
+		  });
 	  
 		</script>	  
 			<!-- <script src="scripts/js/app.js"></script>  -->
