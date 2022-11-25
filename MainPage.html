@@ -175,7 +175,7 @@
 <!-- Bodyyyyyyyyyyyyy startsssss -->
 
 <!-- Main Page navbar starts -->
-<body onload="start();">
+<body onload="buildTable();">
 
 	<nav class="navigation-div">
 		<div class="nav-left navigation-div">
@@ -321,8 +321,8 @@
 
 	</div>
 	<!-- <script src="../../scripts/js/app.js"></script> -->
-	<script type="text/javascript" src="scripts/js/promise.js"></script>
-	<script type="text/javascript" src="scripts/js/fetch.js"></script>
+	<script type="text/javascript" src="scripts/js/promise.js"></script>	<!-- Adding Polyfills -->
+	<script type="text/javascript" src="scripts/js/fetch.js"></script>		<!-- Adding Polyfills -->
 	<script type="text/javascript" src="scripts/js/app.js"></script>
 	<script>
 		function LoginFn() {
@@ -358,11 +358,7 @@
 	<script>
 		
         //fetching data and organize in table format
-        function start() { 
-        	
-        	buildTable();
-        	//rowClicked();
-        }
+///
         function buildTable(){
         	
             let perlist = document.querySelector('.body');

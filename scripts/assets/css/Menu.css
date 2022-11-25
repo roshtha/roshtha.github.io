@@ -2,11 +2,10 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-family: 'Montserrat', sans-serif;
 }
 
 body {
-	background-color: powderblue;
+	background-color: #dcffff;
 	padding: 0 10px;
 	/*height: 100vh;
 	display: flex;
@@ -15,8 +14,8 @@ body {
 	background: #1877F2 /*linear-gradient(135deg, #71b7e6, #9b59b6) */;
 }
 
-h4 {
-	text-align: left;
+h3 {
+	text-align: center;
 	color: #0437F2;
 }
 
@@ -30,7 +29,7 @@ h4 {
 }
 
 .container .btn-block {
-	width: 100%;
+	width: 50%;
 	padding: 12px 10px;
 	font-size: 15px;
 	border: 1px solid black;
@@ -41,16 +40,11 @@ h4 {
 	border-radius: 30px;
 	outline: none;
 	margin-bottom: 40px;
+	margin-left: 80px;
 }
 
 .container .btn-block:hover {
 	background: sandybrown;
 }
 
-@media (max-width: 420px) {
-	
-	.container .btn-block:hover {
-		background: sandybrown;
-	}
-}
 

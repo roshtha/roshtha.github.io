@@ -7,9 +7,138 @@ console.log('service worker inside sw.js');  //checking sw.js installed or not
 //importScripts('scripts/js/idb-fn.js');
 //importScripts('scripts/js/idb-init.js');
 
+//var cacheName = 'cache-v4';
 
+//Files to save in cache
+/*var files = [
+					'/',
+					'FSLogin.html', 
+					'scripts/js/authentication.js',
+					'scripts/js/validation.js',
+					'scripts/js/app.js',					
+					'scripts/assets/css/Login.css',
+					'MainPage.html',
+					'scripts/assets/css/style.css',
+					'scripts/assets/css/MPstyle.css',
+					'scripts/assets/css/MainPageStyle.css',
+					'scripts/assets/icon/themify-icons/themify-icons.css',
+					'scripts/assets/pages/menu-search/css/component.css',
+					'views/digipathofs/images/search.png',
+					'scripts/assets/images/user.png',
+					'views/digipathofs/images/logos.png',
+					'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css',
+					'FieldSurvey.html',
+					'scripts/assets/css/FieldSurvey.css',
+					'scripts/js/fsapp.js',
+					'Menu.html',
+					'scripts/assets/css/Menu.css',
+					'ScreeningSurvey.html',
+					'scripts/assets/css/ScreeningSurvey.css',
+					'scripts/js/ssapp.js',
+					'Oral.html',
+					'scripts/assets/css/Oral.css',
+					'scripts/js/oralapp.js',
+					'Cervical.html',
+					'scripts/assets/css/Cervical.css',
+					'scripts/js/cerviapp.js',
+					'Breast.html',
+					'scripts/assets/css/Breast.css',
+					'scripts/js/breastapp.js',
+					'Others.html',
+					'scripts/assets/css/Others.css',
+					'scripts/js/othersapp.js',
+					'Overview.html',
+					'scripts/assets/css/Overview.css',
+					'scripts/js/gone-offline.js',
+					'scripts/js/promise.js',
+					'scripts/js/fetch.js',
+					'scripts/js/uid.js',
+					'scripts/js/idb.js',
+					'scripts/js/idb-fn.js',
+					'scripts/js/idb-init.js',
+					'scripts/dexie/dexie.js',
+					'scripts/dexie/dexie.min.js',
+  					'manifest.json'
+];	    */
+
+//Adding `install` event listener
+self.addEventListener('install', (event) => {
+  console.log('[Service Worker]: Installing Service Worker', event);
+
+  event.waitUntil(
+    caches.open('static')
+    .then(function(cache){
+		console.log('[Service Worker] precaching app shell', event);
+		/*cache.add('/');
+		//cache.add('/DigiPathoFS/FSLogin.html');
+		cache.add('FSLogin.html');	
+		cache.add('scripts/js/app.js');
+		cache.add('scripts/assets/css/Login.css');*/
+		cache.addAll([
+					'/',
+					'FSLogin.html',
+					'MainPage.html', 
+					'FieldSurvey.html',
+					'Menu.html',
+					'ScreeningSurvey.html',
+					'Oral.html',
+					'Cervical.html',
+					'Breast.html',
+					'Others.html',
+					'Overview.html',
+					'scripts/js/app.js',	
+					'scripts/js/tableManager.js',
+					'https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js',
+					'scripts/dexie/dexie.js',
+					'scripts/dexie/dexie.min.js',				
+					'scripts/assets/css/Login.css',
+					'scripts/assets/css/style.css',
+					'scripts/assets/css/MPstyle.css',
+					'scripts/assets/css/MainPageStyle.css',
+					'scripts/assets/icon/themify-icons/themify-icons.css',
+					'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css',
+					'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css',
+					'scripts/assets/css/FieldSurvey.css',
+					'scripts/assets/css/Menu.css',
+					'scripts/assets/css/ScreeningSurvey.css',
+					'scripts/assets/css/Oral.css',
+					'scripts/assets/css/Cervical.css',
+					'scripts/assets/css/Breast.css',
+					'scripts/assets/css/Others.css',
+					'scripts/assets/css/Overview.css',
+					'views/digipathofs/images/search.png',
+					'scripts/assets/images/user.png',
+					'views/digipathofs/images/dctcfslogo.png',
+					'scripts/assets/images/cdac2.png'
+					
+
+				]);
+	})
+  );
+});
+
+//Adding `install` event listener
+/*self.addEventListener('install', (event) => {
+  console.info('Event: Install');
+
+  event.waitUntil(
+    caches.open(cacheName)
+    .then((cache) => {
+      //[] of files to cache & if any of the file not present `addAll` will fail
+      return cache.addAll(files)
+      .then(() => {
+        console.info('All files are cached');
+        return self.skipWaiting(); //To forces the waiting service worker to become the active service worker
+      })
+      .catch((error) =>  {
+        console.error('Failed to cache', error);
+      })
+    })
+  );
+});*/ 
+    
 //install service worker
-self.addEventListener('install', evt => {
+/*self.addEventListener('install', evt => {
     console.log('[SW] service worker INSTALLED.', evt);
     evt.waitUntil (
 		caches.open('static')
@@ -20,7 +149,7 @@ self.addEventListener('install', evt => {
 					'FSLogin.html', 
 					'scripts/js/authentication.js',
 					'scripts/js/validation.js',
-					'scripts/js/app.js',
+					'scripts/js/app.js',					
 					'scripts/assets/css/Login.css',
 					'MainPage.html',
 					'scripts/assets/css/style.css',
@@ -64,21 +193,84 @@ self.addEventListener('install', evt => {
 					'scripts/dexie/dexie.js',
 					'scripts/dexie/dexie.min.js'
 				]);
-				/*  cache.add('/');                       // By default it takes this path - /
+				/*cache.add('/');                       // By default it takes this path - /
 				cache.add('FSLogin.html');			// By default it takes this path, we don't need to write /DigiPathoFS/-  /DigiPathoFS/FSLogin.html
-				cache.add('scripts/js/app.js');  //	By default it takes this path, we don't need to write /DigiPathoFS/-  /DigiPathoFS/scripts/js/app.js  */
-			})
+				cache.add('scripts/js/app.js');*/  //	By default it takes this path, we don't need to write /DigiPathoFS/-  /DigiPathoFS/scripts/js/app.js  
+			/*})
 		)
-    });
+    });*/
+    
+ 
+	/*self.addEventListener('install', (evt) => {
+	  console.log('[Service Worker] Install');
+	  evt.waitUntil((async () => {
+	    const cache = await caches.open('FSCache');
+	    console.log('[Service Worker] Caching all: app shell and content');
+	    await cache.addAll([
+					'/',
+					'FSLogin.html', 
+					'scripts/js/authentication.js',
+					'scripts/js/validation.js',
+					'scripts/js/app.js',					
+					'scripts/assets/css/Login.css',
+					'MainPage.html',
+					'scripts/assets/css/style.css',
+					'scripts/assets/css/MPstyle.css',
+					'scripts/assets/css/MainPageStyle.css',
+					'scripts/assets/icon/themify-icons/themify-icons.css',
+					'scripts/assets/pages/menu-search/css/component.css',
+					'views/digipathofs/images/search.png',
+					'scripts/assets/images/user.png',
+					'views/digipathofs/images/logos.png',
+					'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css',
+					'FieldSurvey.html',
+					'scripts/assets/css/FieldSurvey.css',
+					'scripts/js/fsapp.js',
+					'Menu.html',
+					'scripts/assets/css/Menu.css',
+					'ScreeningSurvey.html',
+					'scripts/assets/css/ScreeningSurvey.css',
+					'scripts/js/ssapp.js',
+					'Oral.html',
+					'scripts/assets/css/Oral.css',
+					'scripts/js/oralapp.js',
+					'Cervical.html',
+					'scripts/assets/css/Cervical.css',
+					'scripts/js/cerviapp.js',
+					'Breast.html',
+					'scripts/assets/css/Breast.css',
+					'scripts/js/breastapp.js',
+					'Others.html',
+					'scripts/assets/css/Others.css',
+					'scripts/js/othersapp.js',
+					'Overview.html',
+					'scripts/assets/css/Overview.css',
+					'scripts/js/gone-offline.js',
+					'scripts/js/promise.js',
+					'scripts/js/fetch.js',
+					'scripts/js/uid.js',
+					'scripts/js/idb.js',
+					'scripts/js/idb-fn.js',
+					'scripts/js/idb-init.js',
+					'scripts/dexie/dexie.js',
+					'scripts/dexie/dexie.min.js'
+				]);
+	  })());
+	});*/
+	
+
+
 
 //activate service worker
 self.addEventListener('activate', evt => {
     console.log('++++ service worker ACTIVATED ++++.', evt);
+    return self.clients.claim();
     });
 
 //fetch event
 self.addEventListener('fetch', evt => {
     console.log('....service worker FETCHING something....', evt);
+    //evt.respondWith(fetch(evt.request));
     evt.respondWith(
 		caches.match(evt.request)
 			.then(function(response) {
@@ -101,21 +293,21 @@ self.addEventListener('fetch', evt => {
 
 
 
-var name;
-var reply;
+//var name;  // 24nov commented 
+//var reply; // 24nov commented 
 
 
 //importScripts('scripts/js/idb-init.js');
     
 //Now service worker listen the SEND event just like it intercepts fetch event, it will also intercept sync event (when browser comes back online)
-self.addEventListener("sync", function (event) {
+/*self.addEventListener("sync", function (event) {  // 24nov commented 
 	
 	//it looks for any custom event named fs_person_registration_sync_tag being queued
 	if (event.tag == "fs_person_registration_sync_tag") { // listen for the person-registration(field-survey) form custom event - there may be others
 		console.log("===== in serviceWorker =====");
 		console.log(event);
 		console.log("fs_person_registration_sync_tag (THE SYNC TAG) heard");
-		console.log("Sending form data...");
+		console.log("Sending form data...");*/  // 24nov commented 
 		/*event.waitUntil(
 		    readAllData('fs_person_registration_sync')
 		    .then()
@@ -138,7 +330,7 @@ self.addEventListener("sync", function (event) {
 			reply = name + ':' + category + ':' + subject + ':' + message;
 			console.log('POSTED DATA WILL BE: ', reply);
 			});*/
-	}
+	//}	 // 24nov commented 
 	
 
 	
@@ -187,7 +379,7 @@ self.addEventListener("sync", function (event) {
 		console.log("fs_common_cancer_screening_sync_tag (THE SYNC TAG) heard");
 		console.log("Sending form data...");
 	}*/				
-});    
+//});    // 24nov commented 
 
 
 /*function getData(table, id) {

@@ -1,5 +1,5 @@
 {
-    "name": "PWA DigipathoFS",
+    "name": "PWA DigipathoFS",             
     "short_name": "PWA DPFS",
     "start_url": "FSLogin.html",
     "display": "standalone",
@@ -7,7 +7,9 @@
     "theme_color": "#00695c",
     "orientation": "portrait-primary",
     "scope": ".",
-    "description": "A simple PWA, implementing a lot of PWA features.",
+    "description": "DCTC Field Survey App",
+    "lang": "en-US",
+    "dir": "ltr",
 	"icons": [
 		        {
 		            "src": "scripts/assets/img/icons/icon-72.png",

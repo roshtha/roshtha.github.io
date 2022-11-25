@@ -15,7 +15,7 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<!--Source: jquery cdn (https://bootstrapcdn-dev-pr-1284.herokuapp.com/fontawesome/)-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script src="./tableManager.js"></script>
+	<script src="scripts/js/tableManager.js"></script>
 	<!-- RESPOND TO CHANGE IN ONLINE OR OFFLINE -->
     <script src="scripts/js/gone-offline.js"></script>
     
@@ -207,19 +207,7 @@
 	//import { uid } from 'scripts/js/uid.js';
 	//console.log(uid());
 	var uniq = 'id' + (new Date()).getTime();            //creating unique id
-	console.log(uniq);
-	  
-	//var db = new Dexie("DigiPathoFSDB");
-	
-	/*db.version(1).stores({
-		fs_person_registration: "++fs_person_id, global_fs_person_id, fs_inst_id, person_name, dob, age, gender, marital_status, mobile_no, house_name, aadhaar_no, ward_id, panchayath_id, district_id, state_id, country_id, pincode, user_id, created_date, is_valid"
-	});*/
-	
-	//Log DB details -- opens an existing database as is
-	//db.open();
-	/*db.open().catch (function (err) {
-		console.error('Failed to open db: ' + (err.stack || err));
-	});*/
+	console.log(uniq);	  
 	
 	//opening already created IDB
 	var db = new Dexie("DigiPathoFSDB")
@@ -240,76 +228,12 @@
 	    console.error("Oh uh: " + e);
 	  });
 	
-	
-	/*function add_new(name, dob, yearinput, sex, mstatus, mobile, house, aadhaar, ward, panchayath, district, state, country, pin){
-	    // Interact With Database
-	    db.transaction('rw', db.fs_person_registration, function () {
-	        // Let's add some data to db:
-	        insert_object = {
-								person_name:name, dob:dob, age:yearinput, gender:sex, marital_status:mstatus, mobile_no:mobile, house_name:house,
-								aadhaar_no:aadhaar, ward_id:ward, panchayath_id:panchayath, district_id:district, state_id:state, country_id:country,
-								pincode:pin
-							};
-	        db.fs_person_registration.add(insert_object);
-	    }).catch(function(err) {
-	        console.error(err.stack || err);
-	        console.log("ERROR");
-	    });    
-	}*/
-
-
-
-	//add_new("susheel singh","susheel61@gmail.com");//default content
-	//add_new("susheel singh","1987-09-28","35","Female","Married","944778932","SH2, Sulthan Bathery","4565545654","WARD2","PANCH5","DIST14","STA28","IND","689542","Doctor1","2022-09-27",true);//default content
-	/*document.querySelector("button").addEventListener("click",function(e){
-		//document.getElementById('submit').addEventListener('click', function (event) {
-			//preventing default submission of the form
-			//event.preventDefault();
-			//console.log("Default event prevented!!!!");
-			//console.log("button clicked");
-	    add_new(
-			document.getElementById('name').value.trim(),
-			document.getElementById('dob').value.trim(),
-			parseInt(document.getElementById('yearinput').value),
-			//parseInt(document.getElementById('monthinput').value),
-			document.getElementById('sex').value,
-			document.getElementById('mstatus').value,
-			document.getElementById('mobile').value.trim(),
-			document.getElementById('house').value.trim(),
-			document.getElementById('aadhaar').value.trim(),
-			document.getElementById('ward').value.trim(),
-			document.getElementById('panchayath').value.trim(),
-			document.getElementById('district').value,
-			document.getElementById('state').value,
-			document.getElementById('country').value.trim(),
-			document.getElementById('pin').value.trim()
-			);
-	});*/
-	
-		// 
 		// 40 form send event listener
 		document.getElementById('submit').addEventListener('click', function (event) {
 			//preventing default submission of the form
 			event.preventDefault();
 			console.log("Default event prevented!!!!");
-			
-		    /*add_new(
-					document.getElementById('name').value.trim(),
-					document.getElementById('dob').value.trim(),
-					parseInt(document.getElementById('yearinput').value),
-					//parseInt(document.getElementById('monthinput').value),
-					document.getElementById('sex').value,
-					document.getElementById('mstatus').value,
-					document.getElementById('mobile').value.trim(),
-					document.getElementById('house').value.trim(),
-					document.getElementById('aadhaar').value.trim(),
-					document.getElementById('ward').value.trim(),
-					document.getElementById('panchayath').value.trim(),
-					document.getElementById('district').value,
-					document.getElementById('state').value,
-					document.getElementById('country').value.trim(),
-					document.getElementById('pin').value.trim()
-					);*/
+
 		
 			function add_new(name, dob, yearinput, sex, mstatus, mobile, house, aadhaar, ward, panchayath, district, state, country, pin){
 			    // Interact With Database, fs_person_registration is one of the field names of IDB
@@ -330,10 +254,7 @@
 					var list = [];
 					db.fs_person_registration_sync.orderBy("fs_person_id").toArray()
 					.then(list => {
-						/*list.forEach(item => {
-						//something
-						console.log(" LIST ", list);
-						});*/
+
 						console.log(" LIST ", list);
 						
 						//converting to a JSON array for using in web-service call
@@ -350,85 +271,9 @@
 			        console.log("ERROR OCCURRED when calling the form values and mappping with IDB fields");
 			    });    
 			}
-		    
-			//getting all the fields
-		/*var person_name = document.getElementById('name').value.trim();
-		var dob = document.getElementById('dob').value.trim();
-		var yearinput = parseInt(document.getElementById('yearinput').value);
-		var monthinput = parseInt(document.getElementById('monthinput').value);
-		var gender = document.getElementById('sex').value;
-		var marital_status = document.getElementById('mstatus').value;
-		var mobile_no = document.getElementById('mobile').value.trim();
-		var house_name = document.getElementById('house').value.trim();
-		var aadhaar_no = document.getElementById('aadhaar').value.trim();
-		var ward_id = document.getElementById('ward').value.trim();
-		var panchayath_id = document.getElementById('panchayath').value.trim();
-		var district_id = document.getElementById('district').value;
-		var state_id = document.getElementById('state').value;
-		var country_id = document.getElementById('country').value.trim();
-		var pincode = document.getElementById('pin').value.trim();
-		*/
-		/*console.log("name", person_name);
-		console.log(typeof (person_name));
-		console.log(typeof (dob));
-		console.log(typeof (gender));
-		console.log(typeof (marital_status));*/
-		
-		/*var personData = {
-				syncID: uid(),
-				person_name: person_name,
-				dob: dob,
-				yearinput: yearinput,
-				monthinput: monthinput,
-				gender: gender,
-				marital_status: marital_status,
-				mobile_no: mobile_no,
-				house_name: house_name,
-				aadhaar_no: aadhaar_no,
-				ward_id: ward_id,
-				panchayath_id: panchayath_id,
-				district_id: district_id,
-				state_id: state_id,
-				country_id: country_id,
-				pincode: pincode
-			  };*/
-			  
-			  /*var personData = {
-				syncID: uid(),
-				person_name,
-				dob,
-				yearinput,
-				monthinput,
-				gender,
-				marital_status,
-				mobile_no,
-				house_name,
-				aadhaar_no,
-				ward_id,
-				panchayath_id,
-				district_id,
-				state_id,
-				country_id,
-				pincode
-			  };
-		console.log("personData: ", personData)*/
 
-		//Background Sync code 
-		
-		//if the browser supports both serviceWorker and SyncManager, then carry on the further steps
-		/*if ('serviceWorker' in navigator && 'SyncManager' in window) {
-                                    console.log("SYNC MANAGER AVAILABLE");
-                                  
-                                    // serviceWorker registered at top of page       
-                                    navigator.serviceWorker.ready.then(function (swRegistration) {
-                                        console.log("register sync SEND");
-                                        // REGISTER SYNC EVENT called fs_person_registration_sync_tag(our own custom name which should be unique to this particular background sync)
-                                        swRegistration.sync.register('fs_person_registration_sync_tag');*/
+                                        console.log("Saving to idb");
 
-                                        console.log("Saving to idb")
-                                         //writing data into IDB, function of idb-fn.js
-                                        //writeData("fs_person_reg", personData);	//fs_person_reg is table i.e store name
-                                        
                                         //getting all the fields
 									    add_new(
 												document.getElementById('name').value.trim(),
@@ -447,100 +292,12 @@
 												document.getElementById('country').value.trim(),
 												document.getElementById('pin').value.trim()
 												);
-									
-                                        
-                                        // if online it will be sent immediately by sync event and    
-                                        //if not online, display some proper message in the div id named 'output' 
-                                       /* if (!navigator.onLine) {
-                                            const output = document.getElementById('output');
-                                            output.innerHTML =
-                                                "FORM DATA SAVED AND WILL BE SENT LATER WHEN BACK ONLINE";
-                                            output.style.border = '2px solid red';
-                                            output.style.color = 'blue';
-                                            console.log("OFFLINE - so, if block worked");
-                                        } else {		//otherwise, if online, automatically synced 
-                                            // TO DO
-                                            // post form as we are online
-                                            const output = document.getElementById('output');
-                                            output.innerHTML =
-                                                "FORM DATA SENT";
-                                           output.style.border = '2px solid avocado';
-                                           output.style.color = 'green';
-                                           console.log("ONLINE - So, else block worked, data directly sent.");
-                                        }
-                                    });
-                                } else {
-                                	//if the browser does not support both serviceWorker and SyncManager, then post the form in a regular way
-                                    console.log("Browser does not support serviceWorker and SyncManager");
-                                	alert("does not support offline capability!!!!");
-                                }	*/
-
-
-
-		/*db.transaction("rw", db.fs_person_registration,  function* () {
-			  // Let's add some data to db:
-			  var userdata = yield db.fs_person_registration.add({
-			    global_user_id: "GUSR222",
-			    user_id: "UU1",
-			    person_name: person_name,
-			    dob: dob,
-			    gender: gender,
-			    marital_status: marital_status
-			    ///
-			  });
-			 }).catch(function (err) {
-			  // Catch any error event or exception and log it:
-			 console.error(err.stack || err);
-			 console.log("ERRPR")
-			});*/
-			
-	    /*let tx = makeTX('fs_person_registration_sync', 'readwrite');
-	    tx.oncomplete = (ev) => {
-	      console.log("calling bldlsttttttt", ev);
-	      buildList();
-	      //clearForm(); 
-	    };
-	    */
-
-	    
+									    clearForm();    
 
 		});
-	
-	  /*function buildList() {
-		    //use getAll to get an array of objects from our store
-		    let list = document.querySelector('.wList');
-		    list.innerHTML = `<li>Loading...</li>`;
-		    let tx = makeTX('fs_person_registration_sync', 'readonly');
-		    tx.oncomplete = (ev) => {
-		      //transaction for reading all objects is complete
-		    };
-		    let store = tx.objectStore('fs_person_registration_sync');
-		    let getReq = store.getAll();
-		    //returns an array
-		    //option can pass in a key or a keyRange
-		    getReq.onsuccess = (ev) => {
-		      //getAll was successful
-		      let request = ev.target; //request === getReq === ev.target
-		      console.log({ request });
-		      list.innerHTML = request.result
-		        .map((insert_object) => {
-		          return `<li data-key="${insert_object.fs_person_id}"><span>${insert_object.name}</span> ${insert_object.gender}</li>`;
-		        })
-		        .join('\n');
-		    };
-		    getReq.onerror = (err) => {
-		      console.warn(err);
-		    };
-		  }	*/	
-	  
-	  /*function makeTX(storeName, mode) {
-		    let tx = db.transaction(storeName, mode);
-		    tx.onerror = (err) => {
-		      console.warn(err);
-		    };
-		    return tx; 
-		  }*/
-		  
+			 
+	//	clearForm();
+		
 		  //Clear button working
 		  let btnClear = document.getElementById('clearBtnID');
 		  let inputs = document.querySelectorAll('input');
@@ -548,6 +305,13 @@
 		  btnClear.addEventListener('click', () => {
 		      inputs.forEach(input =>  input.value = '');
 		  });
+		  
+		  
+		  function clearForm(event) {
+			  if(event) 
+				  event.preventDefault();
+			  document.personForm.reset();
+		  }
 	  
 		</script>	  
 			<!-- <script src="scripts/js/app.js"></script>  -->
